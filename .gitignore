@@ -4,3 +4,4 @@ web/storage
 Homestead.yaml
 Homestead.json
 web/.env
+phpmyadmin
