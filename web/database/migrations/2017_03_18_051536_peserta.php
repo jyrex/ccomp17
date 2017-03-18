@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class Peserta extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->rememberToken();
+        Schema::create('peserta', function (Blueprint $table) {
+            $table->string('NIM')->unique();
+            $table->text('nama_lengkap');
+            $table->integer('id_prodi');
+            $table->foreign('id_prodi')->references('id_prodi')->on('ugm');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::drop('peserta');
     }
 }
