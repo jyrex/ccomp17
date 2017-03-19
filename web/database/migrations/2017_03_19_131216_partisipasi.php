@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Tim extends Migration
+class Partisipasi extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class Tim extends Migration
      */
     public function up()
     {
-        Schema::create('tim', function (Blueprint $table) {
+        Schema::create('partisipasi', function (Blueprint $table) {
+            $table->string('NIM');
+            $table->foreign('NIM')->references('NIM')->on('peserta')->onUpdate('cascade')->onDelete('NO ACTION');
             $table->integer('id_tim')->unsigned();
-            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('nama_tim');
-            $table->enum('lomba_diikuti', ['CP', 'Data Mining', 'Software Dev', 'UI/UX', 'Embedded System', 'Line Follow']);
+            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class Tim extends Migration
      */
     public function down()
     {
-        Schema::drop('tim');
+        Schema::drop('partisipasi');
     }
 }

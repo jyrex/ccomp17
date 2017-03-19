@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Pembayaran extends Migration
+class Submission extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class Pembayaran extends Migration
      */
     public function up()
     {
-        Schema::create('pembayaran', function (Blueprint $table) {
-            $table->increments('id_pembayaran');
-            $table->enum('lunas', ['ya', 'tidak']);
+        Schema::create('submission', function (Blueprint $table) {
+            $table->increments('no_sub');
             $table->integer('id_tim')->unsigned();
             $table->foreign('id_tim')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->timestamps();
@@ -28,6 +27,6 @@ class Pembayaran extends Migration
      */
     public function down()
     {
-        Schema::drop('pembayaran');
+        Schema::drop('submission');
     }
 }
