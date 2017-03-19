@@ -13,10 +13,10 @@ class Tim extends Migration
     public function up()
     {
         Schema::create('tim', function (Blueprint $table) {
-            $table->integer('id_tim');
-            $table->foreign('id_tim')->references('id')->on('users');
+            $table->integer('id_tim')->unsigned();
+            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama_tim');
-            $table->enum('lomba_diikuti', ['CP', 'Data Mining', 'Software Dev', 'UI/UX', 'Embedded System', 'Line Follow]');
+            $table->enum('lomba_diikuti', ['CP', 'Data Mining', 'Software Dev', 'UI/UX', 'Embedded System', 'Line Follow']);
             $table->timestamps();
         });
     }

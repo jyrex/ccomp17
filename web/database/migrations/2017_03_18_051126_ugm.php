@@ -16,7 +16,6 @@ class Ugm extends Migration
             $table->increments('id_prodi');
             $table->string('fakultas');
             $table->string('program_studi');
-            $table->timestamps();
         });
     }
 

@@ -15,8 +15,8 @@ class Pembayaran extends Migration
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->increments('id_pembayaran');
             $table->enum('lunas', ['ya', 'tidak']);
-            $table->integer('id_tim');
-            $table->foreign('id_tim')->references('id_tim')->on('tim');
+            $table->integer('id_tim')->unsigned();
+            $table->foreign('id_tim')->references('id_tim')->on('tim')->onUpdate('NO ACTION')->onDelete('NO ACTION');
             $table->timestamps();
         });
     }
