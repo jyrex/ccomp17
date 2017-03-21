@@ -8,7 +8,11 @@
             <ul class="right hide-on-med-and-down ">
                 <li><a href="{{ url('/') }}">Home</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="{{ url('/login') }}" class="btn waves-effect waves-light secondary-btn">Login</a></li>
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}" class="btn waves-effect waves-light secondary-btn">Login</a></li>
+                @else
+                    <li><a href="{{ url('/logout') }}" class="btn waves-effect waves-light secondary-btn">Logout</a></li>
+                @endif
             </ul>
         </div>
     </nav>
@@ -18,6 +22,10 @@
 <ul id="nav-mobile" class="side-nav">
     <li><a href="{{ url('/') }}">Home</a></li>
     <li><a href="faq.html">FAQ</a></li>
-    <li><a href="{{ url('/login') }}" class="btn waves-effect waves-light secondary-btn">Login</a></li>
+    @if (Auth::guest())
+        <li><a href="{{ url('/login') }}" class="btn waves-effect waves-light secondary-btn">Login</a></li>
+    @else
+        <li><a href="{{ url('/logout') }}" class="btn waves-effect waves-light secondary-btn">Logout</a></li>
+    @endif
 </ul>
 <!-- end of navbar for mobile -->
