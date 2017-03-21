@@ -17,7 +17,7 @@
                     <div class="col l12 s12 center">
                         <div class="header-text">
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, laborum quis esse magni illo consequatur ab dolore distinctio fugit incidunt, error labore id ipsa numquam nam suscipit.</p>
-                            <a href="#" class="btn waves-effect waves-light amber lighten-2">Daftar</a>
+                            <a href="{{ url('/register') }}" class="btn waves-effect waves-light amber lighten-2">Daftar</a>
                         </div>
                     </div>
                     <!-- <div class="col l12 m12 s12 center">
