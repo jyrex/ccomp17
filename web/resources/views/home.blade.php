@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+Software Development | C-Compiler 2016
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">

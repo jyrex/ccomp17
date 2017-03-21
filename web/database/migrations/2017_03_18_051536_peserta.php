@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class Peserta extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('peserta', function (Blueprint $table) {
+            $table->string('NIM')->primary();
+            $table->text('nama_lengkap');
+            $table->integer('id_prodi')->unsigned();
+            $table->foreign('id_prodi')->references('id_prodi')->on('ugm')->onUpdate('cascade')->onDelete('NO ACTION');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('peserta');
+    }
+}
