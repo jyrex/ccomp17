@@ -18,3 +18,12 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['middleware' => 'auth'], function() {
+
+	// ADMIN
+	Route::group(['middleware' => 'admin'], function() {
+		Route::resource('/peserta', 'PesertaController');
+	});
+});
+
