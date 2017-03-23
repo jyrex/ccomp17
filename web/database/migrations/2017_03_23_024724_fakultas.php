@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Ugm extends Migration
+class Fakultas extends Migration
 {
     /**
      * Run the migrations.
@@ -12,10 +12,9 @@ class Ugm extends Migration
      */
     public function up()
     {
-        Schema::create('ugm', function (Blueprint $table) {
-            $table->increments('id_prodi');
+        Schema::create('fakultas', function (Blueprint $table) {
+            $table->increments('id_fak');
             $table->string('fakultas');
-            $table->string('program_studi');
         });
     }
 
@@ -26,6 +25,6 @@ class Ugm extends Migration
      */
     public function down()
     {
-        Schema::drop('ugm');
+        Schema::drop('fakultas');
     }
 }
