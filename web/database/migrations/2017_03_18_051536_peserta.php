@@ -13,10 +13,11 @@ class Peserta extends Migration
     public function up()
     {
         Schema::create('peserta', function (Blueprint $table) {
-            $table->string('NIM')->primary();
+            $table->string('NIM')->unique();
             $table->text('nama_lengkap');
             $table->integer('id_prodi')->unsigned();
-            $table->foreign('id_prodi')->references('id_prodi')->on('ugm')->onUpdate('cascade')->onDelete('NO ACTION');
+            $table->foreign('id_prodi')->references('id_prodi')->on('program_studi')->onUpdate('cascade')->onDelete('NO ACTION');
+            $table->string('link_ktm');
         });
     }
 
