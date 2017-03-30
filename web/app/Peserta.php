@@ -8,6 +8,10 @@ class Peserta extends Model
 {
     protected $table = 'peserta';
 
+    protected $fillable = [
+        'NIM', 'nama_lengkap', 'id_prodi', 'link_ktm',
+    ];
+
     public function tim() {
         return $this->belongsToMany('App\User', 'partisipasi');
     }
