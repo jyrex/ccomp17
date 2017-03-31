@@ -15,7 +15,7 @@ class User extends Authenticatable
         'tim', 
         'email', 
         'password', 
-        'lomba_diikuti',
+        'lomba',
         'hp',
     ];
 
