@@ -9,6 +9,7 @@
             <div class="container ">
                 <div class="row  z-depth-2">
                     <form method="post" action="{{ url('/team') }}" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                         <div class="col s12 m6 l6 kiri">
                             <div class="headform col s12 ">
                                 <br>

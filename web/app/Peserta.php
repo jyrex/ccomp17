@@ -15,8 +15,10 @@ class Peserta extends Model
         'ktm',
     ];
 
+    public $timestamps = false;
+
     public function tim() {
-        return $this->belongsToMany('App\User', 'partisipasi');
+        return $this->belongsToMany('App\User', 'partisipasi', 'NIM', 'id');
     }
 
     public function prodi() {

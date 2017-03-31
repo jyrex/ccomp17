@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use App\Fakultas;
 use App\Peserta;
 use App\Partisipasi;
+use App\User;
+use Auth;
 
 class AnggotaController extends Controller
 {
@@ -21,7 +23,14 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        return view('tim.anggota.index');
+        $anggota = Partisipasi::where('id_tim', '=', Auth::user()->id)->get();
+        if (is_null($anggota)) {
+            return view('tim.anggota.index');
+        } else {
+            return view('tim.anggota.index',[
+            'anggota' => $anggota,
+            ]);
+        }
     }
 
     /**
@@ -46,60 +55,59 @@ class AnggotaController extends Controller
     public function store(Request $request)
     {
         // Global checker
-        $checker = Peserta::pluck('NIM')->get();
+        $checker = Peserta::pluck('NIM');
 
         // ketua
+        $ktm_ketua = $request->file('ktm_ketua');
+        $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
         if (!$checker->contains($request->nim_ketua)) {
             Peserta::create([
                 'NIM' => $request->nim_ketua,
                 'nama_lengkap' => $request->ketua,
                 'id_prodi' => $request->prodi_ketua,
-                'ktm' => 'uploads/ktm/'.$request->nim_ketua.'.'.$file->getClientOriginalExtension(),
+                'ktm' => 'uploads/ktm/'.$request->ketua.'.'.$ktm_ketua->getClientOriginalExtension(),
                 ]);
         }
         Partisipasi::create([
             'NIM' => $request->nim_ketua,
             'id_tim' => Auth::user()->id,
             ]);
-        $ktm_ketua = $request->file('ktm_ketua');
-        $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
 
-        $ketua = Peserta::where('NIM', '=', $request->nim_ketua)->get();
         $tim = User::find(Auth::user()->id);
-        $tim->id_ketua = $ketua->NIM;
+        $tim->id_ketua = $request->nim_ketua;
         $tim->save();
         
         // anggota 1
+        $ktm_agg1 = $request->file('ktm_agg1');
+        $ktm_agg1->move('uploads/ktm/', $request->nim_agg1);
         if (!$checker->contains($request->nim_agg1)) {
             Peserta::create([
                 'NIM' => $request->nim_agg1,
                 'nama_lengkap' => $request->agg1,
                 'id_prodi' => $request->prodi_agg1,
-                'ktm' => 'uploads/ktm/'.$request->nim_agg1.'.'.$file->getClientOriginalExtension(),
+                'ktm' => 'uploads/ktm/'.$request->agg1.'.'.$ktm_agg1->getClientOriginalExtension(),
                 ]);
         }
         Partisipasi::create([
             'NIM' => $request->nim_agg1,
             'id_tim' => Auth::user()->id,
             ]);
-        $ktm_agg1 = $request->file('ktm_agg1');
-        $ktm_agg1->move('uploads/ktm/', $request->nim_agg1);
 
-        // anggota 2
+        // anggota 2        
+        $ktm_agg2 = $request->file('ktm_agg2');
+        $ktm_agg2->move('uploads/ktm/', $request->nim_agg2);
         if (!$checker->contains($request->nim_agg2)) {
             Peserta::create([
                 'NIM' => $request->nim_agg2,
                 'nama_lengkap' => $request->agg2,
                 'id_prodi' => $request->prodi_agg2,
-                'ktm' => 'uploads/ktm/'.$request->nim_agg2.'.'.$file->getClientOriginalExtension(),
+                'ktm' => 'uploads/ktm/'.$request->agg2.'.'.$ktm_agg2->getClientOriginalExtension(),
                 ]);
         }
         Partisipasi::create([
             'NIM' => $request->nim_agg2,
             'id_tim' => Auth::user()->id,
             ]);
-        $ktm_agg2 = $request->file('ktm_agg2');
-        $ktm_agg2->move('uploads/ktm/', $request->nim_agg2);
 
         return redirect('/team');
     }
