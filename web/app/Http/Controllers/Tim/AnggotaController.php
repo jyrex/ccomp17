@@ -63,6 +63,11 @@ class AnggotaController extends Controller
             ]);
         $ktm_ketua = $request->file('ktm_ketua');
         $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
+
+        $ketua = Peserta::where('NIM', '=', $request->nim_ketua)->get();
+        $tim = User::find(Auth::user()->id);
+        $tim->id_ketua = $ketua->NIM;
+        $tim->save();
         
         // anggota 1
         if (!$checker->contains($request->nim_agg1)) {
