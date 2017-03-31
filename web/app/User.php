@@ -17,6 +17,7 @@ class User extends Authenticatable
         'password', 
         'lomba',
         'hp',
+        'id_ketua',
     ];
 
     /**
