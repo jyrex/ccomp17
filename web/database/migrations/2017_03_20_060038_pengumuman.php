@@ -14,7 +14,7 @@ class Pengumuman extends Migration
     {
         Schema::create('pengumuman', function (Blueprint $table) {
             $table->increments('id_peng');
-            $table->enum('kategori_lomba', ['Umum','CP', 'Data Mining', 'Software Dev', 'UI/UX', 'Embedded System', 'Line Follower']);
+            $table->enum('lomba', ['Umum','CP', 'Data Mining', 'Software Dev', 'UI/UX', 'Embedded System', 'Line Follower']);
             $table->string('judul');
             $table->text('isi');
             $table->timestamps();
