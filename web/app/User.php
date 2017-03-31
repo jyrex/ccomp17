@@ -15,7 +15,7 @@ class User extends Authenticatable
         'tim', 
         'email', 
         'password', 
-        'lomba_diikuti',
+        'lomba',
         'hp',
     ];
 
@@ -34,9 +34,5 @@ class User extends Authenticatable
 
     public function peserta() {
         return $this->belongsToMany('App\Peserta', 'partisipasi');
-    }
-
-    public function submission() {
-        return $this->hasMany('App\submission');
     }
 }
