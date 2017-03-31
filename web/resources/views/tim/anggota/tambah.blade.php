@@ -2,13 +2,12 @@
 
 @section('content')
 <main>
-    <!--        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>-->
     <div id="biodata">
         <!-- Isi form -->
         <div class="form-biodata">
             <div class="container ">
                 <div class="row  z-depth-2">
-                    <form>
+                    <form method="post" action="{{ url('/team') }}" enctype="multipart/form-data">
                         <div class="col s12 m6 l6 kiri">
                             <div class="headform col s12 ">
                                 <br>
@@ -166,12 +165,6 @@
                         </div>
                     </form>
                 </div>
-                <!-- <div class="col s12 m6 l6"> 
-                    <br>    
-                     <div class="headform col s12 ">
-                        
-            </div>
-        </div> -->
             </div>
         </div>
         <!-- End of Isi Form -->

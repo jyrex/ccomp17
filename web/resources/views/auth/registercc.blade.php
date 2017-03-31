@@ -5,7 +5,12 @@ Daftar C-Compiler 2017
 @endsection
 
 @section('addhead')
-<link href="{{ url('/css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="{{ url('/stylesheets/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+<style type="text/css">
+    .navbar-fixed {
+        display: none;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -37,7 +42,7 @@ Daftar C-Compiler 2017
                             <!-- kategori lomba -->
                             <div class="row">
                                 <div class="input-field col s12">
-                                    <select name="lomba_diikuti" id="lomba">
+                                    <select name="lomba" id="lomba">
                                         <option value="" disabled selected>Choose your option</option>
                                         <option value="CP">Competitive Programming</option>
                                         <option value="Data Mining">Data Mining</option>
@@ -86,12 +91,4 @@ Daftar C-Compiler 2017
         </center>
     </div>
 </div>
-@endsection
-
-@section('page-script')
-<script type="text/javascript">
- $(document).ready(function() {
-    $('select').material_select();
-  });
-</script>
 @endsection

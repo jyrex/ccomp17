@@ -55,7 +55,7 @@ class AuthController extends Controller
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
             'hp' => 'required',
-            'lomba_diikuti' => 'required',  
+            'lomba' => 'required',  
         ]);
     }
 
@@ -72,7 +72,7 @@ class AuthController extends Controller
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'hp' => $data['hp'],
-            'lomba_diikuti' => $data['lomba_diikuti'],
+            'lomba' => $data['lomba'],
         ]);
     }
 }

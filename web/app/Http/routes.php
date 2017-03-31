@@ -24,8 +24,15 @@ Route::group(['middleware' => 'auth'], function() {
 		return view('tim.home');
 	});
 	Route::resource('/team', 'Tim\AnggotaController');
+	Route::resource('/submission', 'Tim\SubmissionController');
 	Route::get('/payment', function() {
 		return view('tim.pembayaran.form');
+	});
+	Route::get('/news', function() {
+		return view('tim.pengumuman');
+	});
+	Route::get('/setting', function() {
+		return view('tim.pengaturan');
 	});
 
 	// ADMIN

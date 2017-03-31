@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class AnggotaController extends Controller
+// additional model
+use App\User;
+
+class SubmissionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +19,7 @@ class AnggotaController extends Controller
      */
     public function index()
     {
-        return view('tim.anggota.index');
+        //
     }
 
     /**
@@ -26,7 +29,7 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view('tim.anggota.tambah');
+        //
     }
 
     /**
@@ -59,7 +62,7 @@ class AnggotaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('tim.submission.upload');
     }
 
     /**
@@ -71,7 +74,19 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'submission' => 'required|max:10000',
+            ]);
+
+        $file = $request->file('submission');
+
+        $user = User::find($id);
+        $user->submission = time().'_'.$user->tim.'.'.$file->getClientOriginalExtension();
+        $file->move('uploads/submission/'.$user->lomba, $user->submission);
+
+        $user->save();
+
+        return redirect('/home');
     }
 
     /**

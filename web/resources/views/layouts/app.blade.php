@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
    
-    @include('layouts.head')
+@include('layouts.head')
 
 </head>
 <body>
-	@if (Auth::check())
-		@include('layouts.dashboard')
-	@else
-		@include('layouts.navbar')
-	@endif
+@if (Auth::check())
+	@include('layouts.dashboard')
+@else
+	@include('layouts.navbar')
+@endif
 
-    @yield('content')
+@yield('content')
 
-    @include('layouts.footer')
+@include('layouts.footer')
 
-    @include('layouts.scripts')
+@include('layouts.scripts')
 
 </body>
 </html>

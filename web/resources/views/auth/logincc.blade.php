@@ -5,7 +5,12 @@ Login C-Compiler 2017
 @endsection
 
 @section('addhead')
-<link href="{{ url('/css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+<link href="{{ url('/stylesheets/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+<style type="text/css">
+    .navbar-fixed {
+        display: none;
+    }
+</style>
 @endsection
 
 @section('content')
