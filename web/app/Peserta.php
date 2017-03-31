@@ -9,7 +9,10 @@ class Peserta extends Model
     protected $table = 'peserta';
 
     protected $fillable = [
-        'NIM', 'nama_lengkap', 'id_prodi', 'ktm',
+        'NIM', 
+        'nama_lengkap', 
+        'id_prodi', 
+        'ktm',
     ];
 
     public function tim() {
