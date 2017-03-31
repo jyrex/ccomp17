@@ -46,3 +46,6 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::resource('/peserta', 'Admin\PesertaController');
 	});
 });
+
+// AJAX
+Route::get('/fakultas/{fak_id}', 'Ajax\GetProdiController@get_prodi');

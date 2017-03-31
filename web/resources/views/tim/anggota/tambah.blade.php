@@ -2,6 +2,7 @@
 
 @section('content')
 <main>
+<!-- <div id="debugger">hehehehe</div> -->
     <div id="biodata">
         <!-- Isi form -->
         <div class="form-biodata">
@@ -16,63 +17,67 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12"> <i class="material-icons prefix">perm_identity</i>
-                                        <input type="text" id="nama1" class="validate" />
-                                        <label for="nama1">Nama Ketua</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">email</i>
-                                        <input type="email" id="email1" class="validate" />
-                                        <label for="email1">Email</label>
+                                        <input name="ketua" type="text" id="ketua" class="validate" />
+                                        <label for="ketua">Nama Ketua</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12"> <i class="material-icons prefix">contacts</i>
-                                        <input type="text" id="num1" class="validate" />
-                                        <label for="num1">No.WA/LINE</label>
+                                        <input name="nim_ketua" type="text" id="nim_ketua" class="validate" />
+                                        <label for="nim_ketua">NIM</label>
                                     </div>
                                 </div>
                                 <div class="row" style="">
                                     <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
-                                        <select>
-                                          <option value="" disabled selected>Pilih Kelas Anda</option>
-                                          <option value="1">Option 1</option>
-                                          <option value="2">Option 2</option>
-                                          <option value="3">Option 3</option>
+                                        <select id="fak_ketua">
+                                          <option value="" disabled selected>Fakultas</option>
+                                          @foreach ($fakultas as $list_fak_ketua)
+                                            <option value="{{ $list_fak_ketua->id_fak }}">{{ $list_fak_ketua->fakultas }}</option>
+                                          @endforeach
                                         </select>
-                                        <label>Kelas</label>
+                                        <label>Fakultas</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="">
+                                    <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
+                                        <select name="prodi_ketua" id="prodi_ketua">
+                                          <option value="" disabled selected>Program Studi</option>
+                                        </select>
+                                        <label>Program Studi</label>
                                     </div>
                                 </div>
                                 <div class="headform col s12 ">
-                                    <h6 class="judul"><b>ANGGOTA 2</b></h6>
+                                    <h6 class="judul"><b>ANGGOTA 1</b></h6>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12"> <i class="material-icons prefix">perm_identity</i>
-                                        <input type="text" id="nama2" class="validate" />
-                                        <label for="nama2">Nama</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">email</i>
-                                        <input type="email" id="email2" class="validate" />
-                                        <label for="email2">Email</label>
+                                        <input name="agg1" type="text" id="agg1" class="validate" />
+                                        <label for="agg1">Nama</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12"> <i class="material-icons prefix">contacts</i>
-                                        <input type="text" id="num2" class="validate" />
-                                        <label for="num2">No.WA/LINE</label>
+                                        <input name="nim_agg1" type="text" id="nim_agg1" class="validate" />
+                                        <label for="nim_agg1">NIM</label>
                                     </div>
                                 </div>
                                 <div class="row" style="">
                                     <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
-                                        <select>
-                                          <option value="" disabled selected>Pilih Kelas Anda</option>
-                                          <option value="1">Option 1</option>
-                                          <option value="2">Option 2</option>
-                                          <option value="3">Option 3</option>
+                                        <select id="fak_agg1">
+                                          <option value="" disabled selected>Fakultas</option>
+                                          @foreach ($fakultas as $list_fak_agg1)
+                                            <option value="{{ $list_fak_agg1->id_fak }}">{{ $list_fak_agg1->fakultas }}</option>
+                                          @endforeach
                                         </select>
-                                        <label>Kelas</label>
+                                        <label>Fakultas</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="">
+                                    <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
+                                        <select name="prodi_agg1" id="prodi_agg1">
+                                          <option value="" disabled selected>Program Studi</option>
+                                        </select>
+                                        <label>Program Studi</label>
                                     </div>
                                 </div>
                                 <br>
@@ -82,54 +87,48 @@
                             <div class="headform col s12 ">
                                 <br>
                                 <div class="headform col s12 ">
-                                    <h6 class="judul"><b>ANGGOTA 3</b></h6>
+                                    <h6 class="judul"><b>ANGGOTA 2</b></h6>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12"> <i class="material-icons prefix">perm_identity</i>
-                                        <input type="text" id="nama3" class="validate" />
-                                        <label for="nama3">Nama</label>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">email</i>
-                                        <input type="email" id="email3" class="validate" />
-                                        <label for="email3">Email</label>
+                                        <input name="agg2" type="text" id="agg2" class="validate" />
+                                        <label for="agg2">Nama</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12"> <i class="material-icons prefix">contacts</i>
-                                        <input type="text" id="num3" class="validate" />
-                                        <label for="num3">No.WA/LINE</label>
+                                        <input name="nim_agg2" type="text" id="nim_agg2" class="validate" />
+                                        <label for="nim_agg2">NIM</label>
                                     </div>
                                 </div>
                                 <div class="row" style="">
                                     <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
-                                        <select>
-                                          <option value="" disabled selected>Pilih Kelas Anda</option>
-                                          <option value="1">Option 1</option>
-                                          <option value="2">Option 2</option>
-                                          <option value="3">Option 3</option>
+                                        <select id="fak_agg2">
+                                          <option value="" disabled selected>Fakultas</option>
+                                          @foreach ($fakultas as $list_fak_agg2)
+                                            <option value="{{ $list_fak_agg2->id_fak }}">{{ $list_fak_agg2->fakultas }}</option>
+                                          @endforeach
                                         </select>
-                                        <label>Kelas</label>
+                                        <label>Fakultas</label>
+                                    </div>
+                                </div>
+                                <div class="row" style="">
+                                    <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
+                                        <select name="prodi_agg2" id="prodi_agg2">
+                                          <option value="" disabled selected>Program Studi</option>
+                                        </select>
+                                        <label>Program Studi</label>
                                     </div>
                                 </div>
                                 <div class="headform col s12">
-                                    <h6 class="judul"><b>ASAL SEKOLAH</b> </h6>
+                                    <h6 class="judul"><b>KARTU TANDA MAHASISWA</b></h6>
                                 </div>
-                                <div class="row">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">room</i>
-                                        <input type="text" id="sekolah" class="validate" />
-                                        <label for="sekolah">Asal Sekolah</label>
-                                    </div>
-                                </div>
-                                <div class="headform col s12">
-                                    <h6 class="judul"><b>KARTU PELAJAR</b></h6>
-                                </div>
+                                <div class="headform col s12"><br></div>
                                 <div class="row">
                                     <div class="file-field input-field">
                                         <div class="btn btn-blue">
                                             <span>File</span>
-                                            <input type="file" multiple>
+                                            <input name="ktm_ketua" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="KTM Ketua Tim">
@@ -140,7 +139,7 @@
                                     <div class="file-field input-field">
                                         <div class="btn btn-blue">
                                             <span>File</span>
-                                            <input type="file" multiple>
+                                            <input name="ktm_agg1" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="Anggota 1">
@@ -151,7 +150,7 @@
                                     <div class="file-field input-field">
                                         <div class="btn btn-blue">
                                             <span>File</span>
-                                            <input type="file" multiple>
+                                            <input name="ktm_agg2" type="file" multiple>
                                         </div>
                                         <div class="file-path-wrapper">
                                             <input class="file-path validate" type="text" placeholder="Anggota 2">
@@ -170,4 +169,8 @@
         <!-- End of Isi Form -->
     </div>
 </main>
+@endsection
+
+@section('page-script')
+<script src="{{ url('/js/getprodi.js') }}" type="text/javascript"></script>
 @endsection

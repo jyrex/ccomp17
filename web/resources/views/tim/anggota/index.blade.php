@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="row center-align">
-                    <button class="btn-large-blue waves-effect waves-light" name="action"><a href="{{ url('/team/create') }}">Tambah</a></button>
+                    <a href="{{ url('/team/create') }}" class="btn-large-blue waves-effect waves-light">Tambah</a>
                 </div>
                 <div class="col l4">
                     <div class="card">
