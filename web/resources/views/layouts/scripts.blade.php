@@ -6,3 +6,5 @@
 
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
+
+@yield('page-script')

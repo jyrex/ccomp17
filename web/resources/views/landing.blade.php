@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('addhead')
+<link href="{{ url('/css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
+@endsection
+
 @section('content')
 <!-- homepage -->
 <div class="homepage">

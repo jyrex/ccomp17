@@ -6,10 +6,15 @@
 
 </head>
 <body>
-
-    @include('layouts.navbar')
+	@if (Auth::check())
+		@include('layouts.dashboard')
+	@else
+		@include('layouts.navbar')
+	@endif
 
     @yield('content')
+
+    @include('layouts.footer')
 
     @include('layouts.scripts')
 

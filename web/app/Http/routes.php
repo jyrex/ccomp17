@@ -17,12 +17,25 @@ Route::get('/', function() {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
-
 Route::group(['middleware' => 'auth'], function() {
 
+	// TIM
+	Route::get('/home', function() {
+		return view('tim.home');
+	});
+	Route::resource('/team', 'Tim\AnggotaController');
+	Route::get('/payment', function() {
+		return view('tim.pembayaran.form');
+	});
+
 	// ADMIN
-	Route::group(['middleware' => 'admin'], function() {
-		Route::resource('/peserta', 'PesertaController');
+	Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
+		// Landing
+		Route::get('/', function() {
+			return view('admin.index');
+		});
+		// CRUD
+		// Peserta
+		Route::resource('/peserta', 'Admin\PesertaController');
 	});
 });
