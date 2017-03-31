@@ -91,11 +91,7 @@ Daftar C-Compiler 2017
 @section('page-script')
 <script type="text/javascript">
  $(document).ready(function() {
-    $('#lomba').material_select();
-    $('#lomba').change(function() {
-        $(this).val();
-        $(this).material_select();
-    });
+    $('select').material_select();
   });
 </script>
 @endsection
