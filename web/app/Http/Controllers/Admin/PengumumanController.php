@@ -7,10 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-// additional models
-use App\Peserta;
+use App\Pengumuman;
 
-class PesertaController extends Controller
+class PengumumanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +18,9 @@ class PesertaController extends Controller
      */
     public function index()
     {
-        $peserta = Peserta::all();
-        return view('admin.peserta.index', [
-            'peserta' => $peserta,
+        $pengumuman = Pengumuman::all();
+        return view('admin.pengumuman.index',[
+            'pengumuman' => $pengumuman,
             ]);
     }
 
@@ -32,7 +31,7 @@ class PesertaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pengumuman.create');
     }
 
     /**
@@ -43,7 +42,13 @@ class PesertaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Pengumuman::create([
+            'lomba' => $request->lomba,
+            'judul' => $request->judul,
+            'isi' => $request->isi,
+            ]);
+
+        return redirect('admin/pengumuman');
     }
 
     /**

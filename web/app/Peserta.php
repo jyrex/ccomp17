@@ -22,6 +22,6 @@ class Peserta extends Model
     }
 
     public function prodi() {
-    	return $this->belongsTo('App\Prodi', 'id_prodi');
+    	return $this->belongsTo('App\Prodi', 'id_prodi', 'id_prodi');
     }
 }

@@ -45,7 +45,7 @@ Login C-Compiler 2017
                 <!--end of form login-->
                 <!--card action and button-->
                 <div class="card-action center">
-                    <span>Lupa password? <a href="{{ url('/password/reset') }}">Klik disini</a>! <br> 
+                    <!-- <span>Lupa password? <a href="{{ url('/password/reset') }}">Klik disini</a>! <br>  -->
                     Belum punya akun? <a href="{{ url('register') }}">Register</a>! / kembali ke <br> 
                     <a href="{{ url('/') }}"> halaman utama</a>?</span>
                    <!--  <a href="makeaccount.html" class="indigo-text">Sign Up</a>

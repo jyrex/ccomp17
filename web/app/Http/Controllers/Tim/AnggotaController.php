@@ -24,7 +24,7 @@ class AnggotaController extends Controller
     public function index()
     {
         $anggota = Partisipasi::where('id_tim', '=', Auth::user()->id)->get();
-        if (is_null($anggota)) {
+        if ($anggota->isEmpty()) {
             return view('tim.anggota.index');
         } else {
             return view('tim.anggota.index',[
@@ -67,7 +67,7 @@ class AnggotaController extends Controller
                 'id_prodi' => $request->prodi_ketua,
                 'ktm' => 'uploads/ktm/'.$request->ketua.'.'.$ktm_ketua->getClientOriginalExtension(),
                 ]);
-        }
+        
         Partisipasi::create([
             'NIM' => $request->nim_ketua,
             'id_tim' => Auth::user()->id,
@@ -78,37 +78,42 @@ class AnggotaController extends Controller
         $tim->save();
         
         // anggota 1
-        $ktm_agg1 = $request->file('ktm_agg1');
-        $ktm_agg1->move('uploads/ktm/', $request->nim_agg1);
-        if (!$checker->contains($request->nim_agg1)) {
-            Peserta::create([
+        if ($request->nim_agg1 != "") {
+            $ktm_agg1 = $request->file('ktm_agg1');
+            $ktm_agg1->move('uploads/ktm/', $request->nim_agg1);
+            if (!$checker->contains($request->nim_agg1)) {
+                Peserta::create([
+                    'NIM' => $request->nim_agg1,
+                    'nama_lengkap' => $request->agg1,
+                    'id_prodi' => $request->prodi_agg1,
+                    'ktm' => 'uploads/ktm/'.$request->agg1.'.'.$ktm_agg1->getClientOriginalExtension(),
+                    ]);
+            }
+            Partisipasi::create([
                 'NIM' => $request->nim_agg1,
-                'nama_lengkap' => $request->agg1,
-                'id_prodi' => $request->prodi_agg1,
-                'ktm' => 'uploads/ktm/'.$request->agg1.'.'.$ktm_agg1->getClientOriginalExtension(),
+                'id_tim' => Auth::user()->id,
                 ]);
         }
-        Partisipasi::create([
-            'NIM' => $request->nim_agg1,
-            'id_tim' => Auth::user()->id,
-            ]);
-
-        // anggota 2        
-        $ktm_agg2 = $request->file('ktm_agg2');
-        $ktm_agg2->move('uploads/ktm/', $request->nim_agg2);
-        if (!$checker->contains($request->nim_agg2)) {
-            Peserta::create([
+        
+        // anggota 2
+        if ($request->nim_agg2 != "") {
+            $ktm_agg2 = $request->file('ktm_agg2');
+            $ktm_agg2->move('uploads/ktm/', $request->nim_agg2);
+            if (!$checker->contains($request->nim_agg2)) {
+                Peserta::create([
+                    'NIM' => $request->nim_agg2,
+                    'nama_lengkap' => $request->agg2,
+                    'id_prodi' => $request->prodi_agg2,
+                    'ktm' => 'uploads/ktm/'.$request->agg2.'.'.$ktm_agg2->getClientOriginalExtension(),
+                    ]);
+            }
+            Partisipasi::create([
                 'NIM' => $request->nim_agg2,
-                'nama_lengkap' => $request->agg2,
-                'id_prodi' => $request->prodi_agg2,
-                'ktm' => 'uploads/ktm/'.$request->agg2.'.'.$ktm_agg2->getClientOriginalExtension(),
+                'id_tim' => Auth::user()->id,
                 ]);
         }
-        Partisipasi::create([
-            'NIM' => $request->nim_agg2,
-            'id_tim' => Auth::user()->id,
-            ]);
-
+    }   
+        
         return redirect('/team');
     }
 
