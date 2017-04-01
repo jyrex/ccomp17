@@ -13,14 +13,14 @@
             <div class="container">
                 <div class="row">
                     <div class="col l12 s12">
-                        <h3 class="header center">Lorem ipsum dolor sit amet consectetur <br> Sequi non itaque qui dolorem id</h3>
+                        <h3 class="header center">C-Compiler 2017</h3>
                     </div>
                     <!--   <div class="col l6 s12 hide-on-small-only">
                         <img class="responsive-img header-img" src="img/student.png" alt="">
                     </div> -->
                     <div class="col l12 s12 center">
                         <div class="header-text">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, laborum quis esse magni illo consequatur ab dolore distinctio fugit incidunt, error labore id ipsa numquam nam suscipit.</p>
+                            <p>Beyond the Future.</p>
                             <a href="{{ url('/register') }}" class="btn waves-effect waves-light amber lighten-2">Daftar</a>
                         </div>
                     </div>
@@ -199,229 +199,123 @@
                 </div>
                 <div id="test1" class="col s12">
                     <ul class="collection">
-                        <li class="collection-item">
-                            <strong>Pendaftaran</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail"></span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
                         <li class="collection-item"><strong>Deadline proposal</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">23 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item"><strong>Final</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">7 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item"><strong>Penutupan OLC dan Pengumuman Pemenang</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail"></span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                     </ul>
                 </div>
                 <div id="test2" class="col s12">
                     <ul class="collection">
                         <li class="collection-item">
-                            <strong>Pendaftaran</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit
-                        </li>
-                        <li class="collection-item">
                             <strong>Sesi Pemanasan</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">28 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item"><strong>Sesi Kualifikasi</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">29 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit
                         </li>
                         <li class="collection-item">
                             <strong>Sesi Final</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">5 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
-                            <strong>Penutupan C-Compiler dan Pengumuman Pemenang</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                     </ul>
                 </div>
                 <div id="test3" class="col s12">
                     <ul class="collection">
                         <li class="collection-item">
-                            <strong>Pendaftaran</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
                             <strong>Deadline Pengumpulan Design</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">30 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item"><strong>Deadline sourcecode, Pengumuman finalis</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">8 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item"><strong>Sesi Final</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">  13 Mei 2017 </span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item"><strong>Penutupan C-Compiler dan Pengumuman Pemenang</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
                     </ul>
                 </div>
                 <div id="test4" class="col s12">
                     <ul class="collection">
                         <li class="collection-item">
-                            <strong>Pendaftaran</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
                             <strong>TM Lomba</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">5 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item">
                             <strong>Sesi final</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
-                            <strong>Penutupan C-Compiler dan Pengumuman Pemenang</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                     </ul>
                 </div>
                 <div id="test5" class="col s12">
                     <ul class="collection">
                         <li class="collection-item">
-                            <strong>Pendaftaran</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
                             <strong>Submit jawaban dan seleksi</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">28 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item">
                             <strong>Pengumuman finalis</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">4 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item">
                             <strong>Sesi Final</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">13 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
-                        </li>
-                        <li class="collection-item">
-                            <strong>Penutupan C-Compiler dan Pengumuman Pemenang</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                     </ul>
                 </div>
                 <div id="test6" class="col s12">
                     <ul class="collection">
                         <li class="collection-item">
-                            <strong>Pendaftaran</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
                             <strong>Deadline proposal</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">23 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item">
-                            <strong>Pengumuman Finalis------------------------------------!!!!</strong>
+                            <strong>Pengumuman Finalis</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">29 April 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item">
                             <strong>Pengumpulan Video</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">11 Mei 2017 </span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                         <li class="collection-item">
                             <strong>Sesi Final</strong>
                             <br>
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">13 Mei 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
-                            <strong>Lorem</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        </li>
-                        <li class="collection-item">
-                            <strong>Penutupan C-Compiler dan Pengumuman Pemenang</strong>
-                            <br>
-                            <i class="zmdi zmdi-calendar"></i>
-                            <span class="date-detail">1 Februari 2017 - 15 Maret 2017</span>
-                            <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         </li>
                     </ul>
                 </div>

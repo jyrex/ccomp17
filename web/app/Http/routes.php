@@ -20,9 +20,7 @@ Route::auth();
 Route::group(['middleware' => 'auth'], function() {
 
 	// TIM
-	Route::get('/home', function() {
-		return view('tim.home');
-	});
+	Route::get('/home', 'HomeController@index');
 	Route::resource('/team', 'Tim\AnggotaController');
 	Route::resource('/submission', 'Tim\SubmissionController');
 	Route::get('/payment', function() {
@@ -37,13 +35,9 @@ Route::group(['middleware' => 'auth'], function() {
 
 	// ADMIN
 	Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
-		// Landing
-		Route::get('/', function() {
-			return view('admin.index');
-		});
 		// CRUD
-		// Peserta
 		Route::resource('/peserta', 'Admin\PesertaController');
+		Route::resource('/pengumuman', 'Admin\PengumumanController');
 	});
 });
 
