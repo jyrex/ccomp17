@@ -11,5 +11,13 @@ class Partisipasi extends Model
     protected $fillable = [
         'NIM', 'id_tim',
     ];
+    
+    public function peserta() {
+        return $this->belongsTo('App\Peserta', 'NIM', 'NIM');
+    }
 
+    public function tim() {
+        return $this->belongsTo('App\User', 'id', 'id_tim');
+    }
+    
 }

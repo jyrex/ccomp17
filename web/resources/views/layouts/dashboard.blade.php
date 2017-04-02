@@ -6,25 +6,16 @@
     <ul id="slide-out" class="side-nav fixed" style="background-color: #73D6E7;">
         <li class="center">
             <div class="userView">
-                <!--
-                <div class="background">
-                    <img src="background.jpg">
-                </div>
--->
                 <a href="#!user"><img class="" src="{{ url('img/logowhite.png') }}" style="width:50%;"></a>
                 <a href="#!name"><span class="white-text name">{{ Auth::user()->tim }}</span></a>
                 <a href="#!email"><span class="white-text email">{{ Auth::user()->email }}</span></a>
             </div>
         </li>
-        <!--
-        <li>
-            <div class="divider" style="padding: 0 1px;"></div>
-        </li>
--->
+
+        <!-- dashboard -->
         <li><a href="{{ url('/home') }}" class="waves-effect white-text active"><i class="zmdi zmdi-home zmdi-hc-2x white-text"></i>Home</a></li>
         <li><a href="{{ url('/team') }}" class="waves-effect white-text"><i class="zmdi zmdi-accounts-alt zmdi-hc-2x white-text"></i>Team</a></li>
         <li><a href="{{ url('/submission/'.Auth::user()->id.'/edit') }}" class="waves-effect white-text"><i class="zmdi zmdi-mail-send  zmdi-hc-2x white-text"></i>Submission</a></li>
-        <li><a href="{{ url('/news') }}" class="waves-effect white-text"><i class="zmdi zmdi-calendar-note zmdi-hc-2x white-text"></i>News</a></li>
         @if(Auth::user()->lomba == "Line Follower")
         <li><a href="{{ url('/payment') }}" class="waves-effect white-text"><i class="zmdi zmdi-card zmdi-hc-2x white-text"></i>Payment</a></li>
         @endif

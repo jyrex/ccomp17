@@ -11,12 +11,40 @@
 |
 */
 
+// Web landing page
 Route::get('/', function() {
 	return view('landing');
 });
 
+// Route untuk detail lomba
+Route::get('/cp', function() {
+	return view('lomba.cp');
+});
+Route::get('/datamining', function() {
+	return view('lomba.datamining');
+});
+Route::get('/aplikasi', function() {
+	return view('lomba.aplikasi');
+});
+Route::get('/linefollower', function() {
+	return view('lomba.linefollower');
+});
+Route::get('/uiux', function() {
+	return view('lomba.uiux');
+});
+Route::get('/embedded', function() {
+	return view('lomba.embedded');
+});
+
+// FAQ
+Route::get('/faq', function() {
+	return view('faq');
+});
+
+// Route login dan register
 Route::auth();
 
+// Route user yang sudah login (terautentikasi)
 Route::group(['middleware' => 'auth'], function() {
 
 	// TIM
@@ -25,9 +53,6 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('/submission', 'Tim\SubmissionController');
 	Route::get('/payment', function() {
 		return view('tim.pembayaran.form');
-	});
-	Route::get('/news', function() {
-		return view('tim.pengumuman');
 	});
 	Route::get('/setting', function() {
 		return view('tim.pengaturan');
@@ -43,3 +68,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 // AJAX
 Route::get('/fakultas/{fak_id}', 'Ajax\GetProdiController@get_prodi');
+
+// migrating database
+Route::get('/install/migration', function() {
+	Artisan::call('migrate');
+});

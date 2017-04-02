@@ -8,7 +8,7 @@
     <div id="admin-edit-peserta">
         <div class="container">
             <div class="row">
-                @if (!isset($anggota))
+                @if (!isset($anggota) || $anggota->count() < 3)
                 <div class="row center-align">
                     <a href="{{ url('/team/create') }}" class="btn-large-blue waves-effect waves-light">Tambah</a>
                 </div>
@@ -18,12 +18,15 @@
                         <div class="col l4">
                             <div class="card">
                                 <div class="card-image">
-                                    <img src="http://materializecss.com/images/sample-1.jpg">
-                                    <span class="date">10 juni 2017</span>
+                                    <img src="{{ url('/uploads/ktm/'.$card->NIM) }}">
                                 </div>
                                 <div class="card-content">
-                                    <span class="card-title">{{ $card->NIM }}</span>
-                                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                    <span class="card-title">{{ Auth::user()->tim }}</span>
+                                    <ul>
+                                        <li>{{ $card->peserta->nama_lengkap }}</li>
+                                        <li>{{ $card->peserta->prodi->fakultas->fakultas }}</li>
+                                        <li>{{ $card->peserta->prodi->program_studi }}</li>
+                                    </ul>
                                 </div>
                                 @if (Auth::user()->role == "admin")
                                 <div class="card-action">

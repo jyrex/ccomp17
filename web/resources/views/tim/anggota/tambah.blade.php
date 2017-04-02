@@ -13,40 +13,40 @@
                         <div class="col s12 m6 l6 kiri">
                             <div class="headform col s12 ">
                                 <br>
-                                <div class="headform col s12 ">
-                                    <h6 class="judul"><b>KETUA KELOMPOK</b></h6>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">perm_identity</i>
-                                        <input name="ketua" type="text" id="ketua" class="validate" />
-                                        <label for="ketua">Nama Ketua</label>
+                                    <div class="headform col s12 ">
+                                        <h6 class="judul"><b>KETUA KELOMPOK</b></h6>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">contacts</i>
-                                        <input name="nim_ketua" type="text" id="nim_ketua" class="validate" />
-                                        <label for="nim_ketua">NIM</label>
+                                    <div class="row">
+                                        <div class="input-field col s12"> <i class="material-icons prefix">perm_identity</i>
+                                            <input name="ketua" type="text" id="ketua" class="validate" />
+                                            <label for="ketua">Nama Ketua</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row" style="">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
-                                        <select id="fak_ketua">
-                                          <option value="" disabled selected>Fakultas</option>
-                                          @foreach ($fakultas as $list_fak_ketua)
-                                            <option value="{{ $list_fak_ketua->id_fak }}">{{ $list_fak_ketua->fakultas }}</option>
-                                          @endforeach
-                                        </select>
-                                        <label>Fakultas</label>
+                                    <div class="row">
+                                        <div class="input-field col s12"> <i class="material-icons prefix">contacts</i>
+                                            <input name="nim_ketua" type="text" id="nim_ketua" class="validate" />
+                                            <label for="nim_ketua">NIM</label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row" style="">
-                                    <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
-                                        <select name="prodi_ketua" id="prodi_ketua">
-                                          <option value="" disabled selected>Program Studi</option>
-                                        </select>
-                                        <label>Program Studi</label>
+                                    <div class="row" style="">
+                                        <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
+                                            <select id="fak_ketua">
+                                              <option value="" disabled selected>Fakultas</option>
+                                              @foreach ($fakultas as $list_fak_ketua)
+                                                <option value="{{ $list_fak_ketua->id_fak }}">{{ $list_fak_ketua->fakultas }}</option>
+                                              @endforeach
+                                            </select>
+                                            <label>Fakultas</label>
+                                        </div>
                                     </div>
-                                </div>
+                                    <div class="row" style="">
+                                        <div class="input-field col s12"> <i class="material-icons prefix">dns</i>
+                                            <select name="prodi_ketua" id="prodi_ketua">
+                                              <option value="" disabled selected>Program Studi</option>
+                                            </select>
+                                            <label>Program Studi</label>
+                                        </div>
+                                    </div>
                                 <div class="headform col s12 ">
                                     <h6 class="judul"><b>ANGGOTA 1</b></h6>
                                 </div>

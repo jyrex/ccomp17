@@ -7,12 +7,8 @@
             <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons" style="color: #3cb6d8;">menu</i></a>
             <ul class="right hide-on-med-and-down ">
                 <li><a href="{{ url('/') }}">Home</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}" class="btn waves-effect waves-light secondary-btn">Login</a></li>
-                @else
-                    <li><a href="{{ url('/logout') }}" class="btn waves-effect waves-light secondary-btn">Logout</a></li>
-                @endif
+                <li><a href="{{ url('/faq') }}">FAQ</a></li>
+                <li><a href="{{ url('/login') }}" class="btn waves-effect waves-light secondary-btn">Login</a></li>
             </ul>
         </div>
     </nav>

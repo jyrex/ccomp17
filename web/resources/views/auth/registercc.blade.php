@@ -17,7 +17,7 @@ Daftar C-Compiler 2017
 <div id="main-register">
     <div class="main-content">
         <center>
-            <a href="#" class="brand-logo"><img src="{{ url('img/logowhite.png') }}" alt="" class="logo"></a>
+            <a href="{{ url('/') }}" class="brand-logo"><img src="{{ url('img/logowhite.png') }}" alt="" class="logo"></a>
             <div class="card">
                 <!--title-->
                 <div class="card-content black-text"> <span class="card-title flow-text">REGISTER</span>

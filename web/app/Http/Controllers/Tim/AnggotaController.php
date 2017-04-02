@@ -22,7 +22,8 @@ class AnggotaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+        //$anggota = Partisipasi::find(Auth::user()->id);
         $anggota = Partisipasi::where('id_tim', '=', Auth::user()->id)->get();
         if ($anggota->isEmpty()) {
             return view('tim.anggota.index');
@@ -58,24 +59,26 @@ class AnggotaController extends Controller
         $checker = Peserta::pluck('NIM');
 
         // ketua
-        $ktm_ketua = $request->file('ktm_ketua');
-        $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
-        if (!$checker->contains($request->nim_ketua)) {
-            Peserta::create([
+        if ($request->nim_ketua != "") {
+            $ktm_ketua = $request->file('ktm_ketua');
+            $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
+            if (!$checker->contains($request->nim_ketua)) {
+                Peserta::create([
+                    'NIM' => $request->nim_ketua,
+                    'nama_lengkap' => $request->ketua,
+                    'id_prodi' => $request->prodi_ketua,
+                    'ktm' => 'uploads/ktm/'.$request->ketua.'.'.$ktm_ketua->getClientOriginalExtension(),
+                    ]);
+            }
+            Partisipasi::create([
                 'NIM' => $request->nim_ketua,
-                'nama_lengkap' => $request->ketua,
-                'id_prodi' => $request->prodi_ketua,
-                'ktm' => 'uploads/ktm/'.$request->ketua.'.'.$ktm_ketua->getClientOriginalExtension(),
+                'id_tim' => Auth::user()->id,
                 ]);
-        
-        Partisipasi::create([
-            'NIM' => $request->nim_ketua,
-            'id_tim' => Auth::user()->id,
-            ]);
 
-        $tim = User::find(Auth::user()->id);
-        $tim->id_ketua = $request->nim_ketua;
-        $tim->save();
+            $tim = User::find(Auth::user()->id);
+            $tim->id_ketua = $request->nim_ketua;
+            $tim->save();
+        }
         
         // anggota 1
         if ($request->nim_agg1 != "") {
@@ -112,8 +115,6 @@ class AnggotaController extends Controller
                 'id_tim' => Auth::user()->id,
                 ]);
         }
-    }   
-        
         return redirect('/team');
     }
 

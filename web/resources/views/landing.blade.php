@@ -7,33 +7,27 @@
 @section('content')
 <!-- homepage -->
 <div class="homepage">
-    <!-- homepage content-->
-    <div class="homepage-text cf">
-        <div class="section no-pad-bot" id="index-banner">
-            <div class="container">
-                <div class="row">
-                    <div class="col l12 s12">
-                        <h3 class="header center">C-Compiler 2017</h3>
-                    </div>
-                    <!--   <div class="col l6 s12 hide-on-small-only">
-                        <img class="responsive-img header-img" src="img/student.png" alt="">
-                    </div> -->
-                    <div class="col l12 s12 center">
-                        <div class="header-text">
-                            <p>Beyond the Future.</p>
-                            <a href="{{ url('/register') }}" class="btn waves-effect waves-light amber lighten-2">Daftar</a>
-                        </div>
-                    </div>
-                    <!-- <div class="col l12 m12 s12 center">
-                        <div class="chevron-down">
-                            <i class="zmdi zmdi-chevron-down zmdi-hc-3x"></i>
-                        </div>
-                    </div> -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end of homepage content -->
+    <!-- homepage content--> 
+        <div class="homepage-text cf"> 
+            <div class="section no-pad-bot" id="index-banner"> 
+                <div class="container"> 
+                    <div class="row"> 
+                        <div class="col l12 s12"> 
+                            <h3 class="header center">C-Compiler UGM 2017</h3> 
+                        </div> 
+                        <div class="col l12 s12 center"> 
+                            <div class="header-text"> 
+                                <h5 class="light">Competition of Computer Science and Electronics Student</h5> 
+                                <p class="light"><i>Beyond the future</i></p> 
+
+                                <a href="#kompetisi" class="btn waves-effect waves-light amber lighten-2">Daftar</a> 
+                            </div> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+<!-- end of homepage content --> 
 </div>
 <!-- end of homepage-->
 
@@ -68,7 +62,7 @@
         <div class="section">
             <div class="row center">
                 <!--                    <h6 class="title">ABOUT</h6>-->
-                <h5 class="caption light">Lorem ipsum Dolor sit Amet</h5>
+                <h5 class="caption light">About</h5>
                 <div class="separator">
                     <img src="img/hr.png" alt="">
                 </div>
@@ -95,12 +89,12 @@
 <!-- end of about -->
 
 <!-- kompetisi -->
-<div class="kompetisi">
+<div id="kompetisi" class="kompetisi">
     <div class="container">
         <div class="section">
             <div class="row center">
                 <!--                    <h6 class="title">KOMPETISI</h6>-->
-                <h5 class="caption light">Lorem ipsum Dolor sit Amet</h5>
+                <h5 class="caption light">Kompetisi</h5>
                 <div class="separator">
                     <img src="img/hr.png" alt="">
                 </div>
@@ -180,8 +174,7 @@
     <div class="container">
         <div class="section">
             <div class="row center">
-                <!--                    <h6 class="title">TIMELINE</h6>-->
-                <h5 class="caption light">Lorem ipsum Dolor sit Amet</h5>
+                <h5 class="caption light">Timeline</h5>
                 <div class="separator">
                     <img src="img/hr.png" alt="">
                 </div>
@@ -194,7 +187,7 @@
                         <li class="tab col s2"><a href="#test3">UI/UX</a></li>
                         <li class="tab col s2"><a href="#test4">Line Follower</a></li>
                         <li class="tab col s2"><a href="#test5">Data Mining</a></li>
-                        <li class="tab col s2"><a href="#test6">Software</a></li>
+                        <li class="tab col s2"><a href="#test6">Software Dev</a></li>
                     </ul>
                 </div>
                 <div id="test1" class="col s12">
@@ -330,54 +323,40 @@
     <div class="container">
         <div class="row center">
             <div class="col l12">
-                <h4 class="light">Lorem ipsum dolor sit amet consectetur</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis officiis sunt, eius consequuntur! Voluptatem rem culpa quae eius cum quia mollitia dolorem, tempore minima magnam totam optio fugiat dolorum placeat.</p>
-                <a href="#" class="btn waves-effect waves-light amber lighten-2">Daftar</a>
+                <div class="row"> 
+                    <div class="col l12 s12"> 
+                        <h4 class="light">C-Compiler UGM 2017</h4> 
+                    </div> 
+                    <div class="col l12 s12 center"> 
+                        <div class="header-text"> 
+                            <h5 class="light">Competition of Computer Science and Electronics Student</h5> 
+                            <p class="light"><i>Beyond the future</i></p> 
+
+                            <a href="{{ url('/register') }}" class="btn waves-effect waves-light amber lighten-2">Daftar</a> 
+                        </div> 
+                    </div> 
+                </div>
             </div>
         </div>
     </div>
 </div>
 <!-- end of last -->
 
-<!-- footer -->
-<footer>
-    <div class="container">
-        <div class="row" style="margin-bottom:0;">
-            <div class="col l6 s6 ">
-                <p style="color: #e6e6e6; padding-top: 10px;">2017 © C-Compiler</p>
-            </div>
-            <div class="col l6  s6 right-align">
-                <div class="social-media">
-                    <div class="social-wrapper">
-                        <a class="zmdi zmdi-facebook" href="#"></a>
-                    </div>
-                    <div class="social-wrapper">
-                        <a class="zmdi zmdi-twitter" href="#"></a>
-                    </div>
-                    <div class="social-wrapper">
-                        <a class="zmdi zmdi-instagram" href="#"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- end of footer  -->
-
 <!-- Modal Structure -->
 
 <!-- Modal 1 -->
 <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header 1</h4>
-        <p>A bunch of text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam odio placeat, voluptatem laboriosam totam, sint tenetur blanditiis ad libero sequi quis alias consequatur nobis corporis repellat autem beatae, vitae.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat doloribus cumque quisquam impedit similique consectetur alias a, distinctio laudantium. Saepe illo quod, cum aliquam corporis ea qui accusamus recusandae nemo.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis incidunt totam accusamus veniam illum enim eveniet ipsum nam, adipisci inventore repudiandae doloribus, natus suscipit commodi eum corrupti tempora, obcaecati.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta ipsa eveniet ipsam quibusdam autem ex ea quidem reprehenderit eum. Sint, sed labore iure ea cupiditate, sapiente veritatis velit ipsum!</p>
+        <h4>Embedded System</h4>
+        <p>Piranti cerdas (smart device) adalah sebuah hasil karya teknologi yang bekerja secara interaktif dan otomatis 
+        serta mampu memberikan suatu solusi bagi permasalahan sehari-hari.</p>
+        <p>Sementara itu Embedded system adalah sebua piranti keras (hardware) 
+        yang bekerja berdasarkan perintah dari piranti lunak (software) dan didesain memiliki tujuan dan fungsi yang spesifik.</p> 
+        <p>Dengan menggabungkan konsep piranti cerdas dan embedded system, maka diharapkan dapat terciptanya sebuah sistem kompleks memiliki kualitas yang baik. Dilengkapi dengan antarmuka yang baik dan penggunaan sensor sebagai input dari keadaan lingkungan, piranti cerdas dapat bekerja secara efisien dan memberikan manfaat yang besar bagi lingkungan dan masyarakat.</p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        <a href="embedded.html" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
+        <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
+        <a href="{{ url('/embedded') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
     </div>
 </div>
 <!-- end of Modal 1 -->
@@ -385,15 +364,15 @@
 <!-- Modal 2 -->
 <div id="modal2" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header 2</h4>
+        <h4>Competitive Programming</h4>
         <p>A bunch of text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam odio placeat, voluptatem laboriosam totam, sint tenetur blanditiis ad libero sequi quis alias consequatur nobis corporis repellat autem beatae, vitae.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat doloribus cumque quisquam impedit similique consectetur alias a, distinctio laudantium. Saepe illo quod, cum aliquam corporis ea qui accusamus recusandae nemo.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis incidunt totam accusamus veniam illum enim eveniet ipsum nam, adipisci inventore repudiandae doloribus, natus suscipit commodi eum corrupti tempora, obcaecati.</p>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta ipsa eveniet ipsam quibusdam autem ex ea quidem reprehenderit eum. Sint, sed labore iure ea cupiditate, sapiente veritatis velit ipsum!</p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        <a href="cp.html" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
+        <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
+        <a href="{{ url('/cp') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
     </div>
 </div>
 <!-- end of Modal 2 -->
@@ -401,15 +380,14 @@
 <!-- Modal 3 -->
 <div id="modal3" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header 3</h4>
-        <p>A bunch of text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam odio placeat, voluptatem laboriosam totam, sint tenetur blanditiis ad libero sequi quis alias consequatur nobis corporis repellat autem beatae, vitae.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat doloribus cumque quisquam impedit similique consectetur alias a, distinctio laudantium. Saepe illo quod, cum aliquam corporis ea qui accusamus recusandae nemo.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis incidunt totam accusamus veniam illum enim eveniet ipsum nam, adipisci inventore repudiandae doloribus, natus suscipit commodi eum corrupti tempora, obcaecati.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta ipsa eveniet ipsam quibusdam autem ex ea quidem reprehenderit eum. Sint, sed labore iure ea cupiditate, sapiente veritatis velit ipsum!</p>
+        <h4>UI/UX</h4>
+        <p>Lomba desain User Interface dan User Experience (UI/UX) adalah lomba desain sistem/produk bertujuan kearah kenyamanan dan kemudahan user dalam menggunakan sistem/produk tersebut.</p>
+        <p>Para peserta lomba dituntut mendesain suatu tampilan dan experience antarmuka bagi user yang baik sehingga didapat kualitas hasil sistem/produk yang memiliki nilai UI UX yg baik.</p>
+        <p>Tingginya persaingan di bidang e-commerce menginspirasi tema yang akan diangkat untuk lomba ini yaitu “Simple and Fun Online Shopping”</p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        <a href="uiux.html" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
+        <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
+        <a href="{{ url('/uiux') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
     </div>
 </div>
 <!-- end of Modal 3 -->
@@ -417,15 +395,12 @@
 <!-- Modal 4 -->
 <div id="modal4" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header 4</h4>
-        <p>A bunch of text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam odio placeat, voluptatem laboriosam totam, sint tenetur blanditiis ad libero sequi quis alias consequatur nobis corporis repellat autem beatae, vitae.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat doloribus cumque quisquam impedit similique consectetur alias a, distinctio laudantium. Saepe illo quod, cum aliquam corporis ea qui accusamus recusandae nemo.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis incidunt totam accusamus veniam illum enim eveniet ipsum nam, adipisci inventore repudiandae doloribus, natus suscipit commodi eum corrupti tempora, obcaecati.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta ipsa eveniet ipsam quibusdam autem ex ea quidem reprehenderit eum. Sint, sed labore iure ea cupiditate, sapiente veritatis velit ipsum!</p>
+        <h4>Line Follower</h4>
+        <p>Lomba Robot Line Follower kali ini yaitu lomba dimana robot mengikuti garis yang sudah disiapkan pada sebuah track dengan rintangan tertentu dengan tujuan akhir memadamkan api pada lilin.!</p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        <a href="linefolower.html" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
+        <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
+        <a href="{{ url('/linefollower') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
     </div>
 </div>
 <!-- Modal 4 -->
@@ -433,15 +408,14 @@
 <!-- Modal 5 -->
 <div id="modal5" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header 5</h4>
-        <p>A bunch of text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam odio placeat, voluptatem laboriosam totam, sint tenetur blanditiis ad libero sequi quis alias consequatur nobis corporis repellat autem beatae, vitae.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat doloribus cumque quisquam impedit similique consectetur alias a, distinctio laudantium. Saepe illo quod, cum aliquam corporis ea qui accusamus recusandae nemo.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis incidunt totam accusamus veniam illum enim eveniet ipsum nam, adipisci inventore repudiandae doloribus, natus suscipit commodi eum corrupti tempora, obcaecati.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta ipsa eveniet ipsam quibusdam autem ex ea quidem reprehenderit eum. Sint, sed labore iure ea cupiditate, sapiente veritatis velit ipsum!</p>
+        <h4>Data Mining</h4>
+        <p>Data mining adalah proses untuk mencari pola dari suatu data set besar yang melibatkan metode yang merupakan bagian dari artificial inteligence, machine learning, statistics, dan database system.</p>
+        <p>Tujuan utama dari data mining adalah untuk mengambil informasi dari data set dan merubahnya ke struktur yang bisa dimengerti.</p>
+        <p>Di era modern ini tersedia banyak sekali data baik yang confidental maupun yang widely available. Data data tersebut menunggu ahli data mining untuk memanfaatkannya</p>
     </div>
     <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        <a href="datamining.html" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
+        <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
+        <a href="{{ url('/datamining') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
     </div>
 </div>
 <!-- end of Modal 5 -->
@@ -449,15 +423,14 @@
 <!-- Modal 6 -->
 <div id="modal6" class="modal modal-fixed-footer">
     <div class="modal-content">
-        <h4>Modal Header 6</h4>
-        <p>A bunch of text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex ipsam odio placeat, voluptatem laboriosam totam, sint tenetur blanditiis ad libero sequi quis alias consequatur nobis corporis repellat autem beatae, vitae.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat doloribus cumque quisquam impedit similique consectetur alias a, distinctio laudantium. Saepe illo quod, cum aliquam corporis ea qui accusamus recusandae nemo.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil nobis incidunt totam accusamus veniam illum enim eveniet ipsum nam, adipisci inventore repudiandae doloribus, natus suscipit commodi eum corrupti tempora, obcaecati.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta ipsa eveniet ipsam quibusdam autem ex ea quidem reprehenderit eum. Sint, sed labore iure ea cupiditate, sapiente veritatis velit ipsum!</p>
+        <h4>Software Development</h4>
+        <p>Lomba pengembangan aplikasi merupakan lomba yang menguji kemampuan mahasiswa dalam mengembangkan ide, kreativitas, dan solusi dalam menyelesaikan berbagai permasalahan di Indonesia.</p>
+    <p>Peserta diharapkan mengembangkan aplikasi yang memiliki dampak positif masyarakat. Dampak tersebut harus ditunjukkan tidak saja dalam bentuk argumentasi untuk ide, tetapi ditunjang dengan data. Artinya, perangkat lunak yang dikembangkan harus sudah dioperasikan sampai level tertentu, sehingga dampaknya dapat diukur.</p>
+    <p>Domain problem yang diselesaikan antara lain, tetapi tidak terbatas pada, pendidikan, kesehatan, sosial budaya, pertanian dan kelautan, kepariwisataan, sumber daya alam</p>
     </div>
     <div class="modal-footer">
-       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
-        <a href="aplikasi.html" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
+        <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
+        <a href="{{ url('/aplikasi') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Selengkapnya</a>
     </div>
 </div>
 <!-- end of Modal 6 -->
