@@ -10,35 +10,37 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+// GUEST
+Route::group(['middleware' => 'guest'], function () {
+	// Web landing page
+	Route::get('/', function() {
+		return view('landing');
+	});
 
-// Web landing page
-Route::get('/', function() {
-	return view('landing');
-});
+	// Route untuk detail lomba
+	Route::get('/cp', function() {
+		return view('lomba.cp');
+	});
+	Route::get('/datamining', function() {
+		return view('lomba.datamining');
+	});
+	Route::get('/aplikasi', function() {
+		return view('lomba.aplikasi');
+	});
+	Route::get('/linefollower', function() {
+		return view('lomba.linefollower');
+	});
+	Route::get('/uiux', function() {
+		return view('lomba.uiux');
+	});
+	Route::get('/embedded', function() {
+		return view('lomba.embedded');
+	});
 
-// Route untuk detail lomba
-Route::get('/cp', function() {
-	return view('lomba.cp');
-});
-Route::get('/datamining', function() {
-	return view('lomba.datamining');
-});
-Route::get('/aplikasi', function() {
-	return view('lomba.aplikasi');
-});
-Route::get('/linefollower', function() {
-	return view('lomba.linefollower');
-});
-Route::get('/uiux', function() {
-	return view('lomba.uiux');
-});
-Route::get('/embedded', function() {
-	return view('lomba.embedded');
-});
-
-// FAQ
-Route::get('/faq', function() {
-	return view('faq');
+	// FAQ
+	Route::get('/faq', function() {
+		return view('faq');
+	});
 });
 
 // Route login dan register
@@ -50,6 +52,7 @@ Route::group(['middleware' => 'auth'], function() {
 	// TIM
 	Route::get('/home', 'HomeController@index');
 	Route::resource('/team', 'Tim\AnggotaController');
+	Route::get('/team/tambah', 'Tim\AnggotaController@tambah_anggota');
 	Route::resource('/submission', 'Tim\SubmissionController');
 	Route::get('/payment', function() {
 		return view('tim.pembayaran.form');
@@ -61,6 +64,7 @@ Route::group(['middleware' => 'auth'], function() {
 	// ADMIN
 	Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function() {
 		// CRUD
+		Route::resource('/tim', 'Admin\TimController');
 		Route::resource('/peserta', 'Admin\PesertaController');
 		Route::resource('/pengumuman', 'Admin\PengumumanController');
 	});

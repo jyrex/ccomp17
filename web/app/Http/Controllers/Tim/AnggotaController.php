@@ -42,6 +42,14 @@ class AnggotaController extends Controller
     public function create()
     {
         $fakultas = Fakultas::all();
+        return view('tim.anggota.ketua', [
+            'fakultas' => $fakultas,
+            ]);
+    }
+
+    public function tambah_anggota() 
+    {
+        $fakultas = Fakultas::all();
         return view('tim.anggota.tambah', [
             'fakultas' => $fakultas,
             ]);
@@ -57,9 +65,19 @@ class AnggotaController extends Controller
     {
         // Global checker
         $checker = Peserta::pluck('NIM');
+        $regexp = '1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}';
 
+        
         // ketua
         if ($request->nim_ketua != "") {
+            // Validate data
+            $this->validate($request, [
+                'ketua' => 'required',
+                'nim_ketua' => 'required|regexp:'.$regexp,
+                'prodi_ketua' => 'required',
+                'ktm_ketua' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
+            ]);
+
             $ktm_ketua = $request->file('ktm_ketua');
             $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
             if (!$checker->contains($request->nim_ketua)) {
@@ -82,6 +100,14 @@ class AnggotaController extends Controller
         
         // anggota 1
         if ($request->nim_agg1 != "") {
+            // Validate data
+            $this->validate($request, [
+                'agg1' => 'required',
+                'nim_agg1' => 'required|regexp:'.$regexp,
+                'prodi_agg1' => 'required',
+                'ktm_agg1' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
+            ]);
+
             $ktm_agg1 = $request->file('ktm_agg1');
             $ktm_agg1->move('uploads/ktm/', $request->nim_agg1);
             if (!$checker->contains($request->nim_agg1)) {
@@ -100,6 +126,14 @@ class AnggotaController extends Controller
         
         // anggota 2
         if ($request->nim_agg2 != "") {
+            // Validate data
+            $this->validate($request, [
+                'agg2' => 'required',
+                'nim_agg2' => 'required|regexp:'.$regexp,
+                'prodi_agg2' => 'required',
+                'ktm_agg2' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
+            ]);
+
             $ktm_agg2 = $request->file('ktm_agg2');
             $ktm_agg2->move('uploads/ktm/', $request->nim_agg2);
             if (!$checker->contains($request->nim_agg2)) {
