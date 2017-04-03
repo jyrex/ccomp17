@@ -11,6 +11,7 @@
                         <div class="input-field col s12">
                             <select name="lomba" id="lomba">
                                 <option value="" disabled selected>Choose your option</option>
+                                <option value="Umum">Umum</option>
                                 <option value="CP">Competitive Programming</option>
                                 <option value="Data Mining">Data Mining</option>
                                 <option value="Software Dev">Software Development</option>
@@ -30,7 +31,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input name="isi" id="isi" type="text" class="validate">
+                            <textarea name="isi" id="isi" type="text" class="materialize-textarea"></textarea>
                             <label for="isi">Isi</label>
                         </div>
                     </div>

@@ -14,12 +14,13 @@
             <p class="title-card">Upload Bukti Pembayaran</p>
             <div class="row z-depth-2">
                 <div class="col l12">
-                    <form>
+                    <form action="{{ url('/payment') }}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
                         <div class="row">
                             <div class="file-field input-field">
                                 <div class="btn btn-blue">
                                     <span>File</span>
-                                    <input type="file">
+                                    <input name="bukti" type="file">
                                 </div>
                                 <div class="file-path-wrapper">
                                     <input class="file-path validate" type="text" placeholder="Upload bukti pembayaran">
@@ -29,8 +30,8 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1">Keterangan Tambahan</label>
+                                <textarea name="keterangan" id="keterangan" class="materialize-textarea"></textarea>
+                                <label for="keterangan">Keterangan Tambahan</label>
                             </div>
                         </div>
 

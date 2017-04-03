@@ -9,7 +9,7 @@
                 <table class="bordered striped highlight">
                     <thead>
                         <tr>
-                        	<th>No</th>
+                        	<th>ID</th>
                             <th>NIM</th>
                             <th>Nama</th>
                             <th>Fakultas</th>
@@ -18,21 +18,25 @@
                         </tr>
                     </thead>
 
-                    <tbody> 
-                    <?php $i=1; ?>
+                    <tbody>
                     @foreach ($peserta as $list)
                         <tr>
-                        	<td>{{ $i }}</td>
+                        	<td>{{ $list->id }}</td>
                             <td>{{ $list->NIM }}</td>
                             <td>{{ $list->nama_lengkap }}</td>
                             <td>{{ $list->prodi->fakultas->fakultas }}</td>
                             <td>{{ $list->prodi->program_studi }}</td>
                             <td>
-                                <a href="" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="zmdi zmdi-edit zmdi-hc-2x blue-text text-lighten-3"></i></a>
-                                <a href="" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Hapus"><i class="zmdi zmdi-delete zmdi-hc-2x red-text text-lighten-1"></i></a>
+                                <a href="{{ url('/team/'.$list->id.'/edit') }}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="zmdi zmdi-edit blue-text text-lighten-3"></i></a>
+                                <form action="{{ url('admin/peserta/'.$list->id) }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <button type="submit" id="delete-task-{{ $list->id }}" class=" btn tooltipped" data-position="top" data-delay="50" data-tooltip="Hapus">
+                                        <i class="zmdi zmdi-delete zmdi-hc-2x red-text text-lighten-1"></i>
+                                    </button>
+                                </form>
                             </td>
                         </tr>
-                    <?php $i=$i+1; ?>
                     @endforeach
                     </tbody>
                 </table>

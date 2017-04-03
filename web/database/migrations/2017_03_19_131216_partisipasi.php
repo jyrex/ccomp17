@@ -13,10 +13,11 @@ class Partisipasi extends Migration
     public function up()
     {
         Schema::create('partisipasi', function (Blueprint $table) {
+            $table->increments('id');
             $table->string('NIM');
-            $table->foreign('NIM')->references('NIM')->on('peserta')->onUpdate('cascade')->onDelete('NO ACTION');
+            $table->foreign('NIM')->references('NIM')->on('peserta')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('id_tim')->unsigned();
-            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

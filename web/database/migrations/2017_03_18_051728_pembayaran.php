@@ -15,8 +15,9 @@ class Pembayaran extends Migration
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->increments('id_pembayaran');
             $table->integer('id_tim')->unsigned();
-            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+            $table->foreign('id_tim')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('bukti');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }

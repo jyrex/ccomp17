@@ -37,4 +37,8 @@ class User extends Authenticatable
     public function peserta() {
         return $this->belongsToMany('App\Peserta', 'partisipasi', 'id', 'NIM');
     }
+
+    public function partisipasi() {
+        return $this->hasMany('App\Partisipasi', 'id_tim', 'id');
+    }
 }

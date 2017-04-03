@@ -77,7 +77,20 @@ class PesertaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $peserta = Peserta::find($id);
+
+        $this->validate($request, [
+                'nama' => 'required',
+                'NIM' => ['required','regex:/1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}/'],
+                'prodi' => 'required',
+            ]);
+
+        $peserta->NIM = $request->NIM;
+        $peserta->nama_lengkap = $request->nama;
+        $peserta->id_prodi = $request->prodi;
+        $peserta->save();
+
+        return redirect('/team');
     }
 
     /**
@@ -88,6 +101,9 @@ class PesertaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $peserta = Peserta::find($id);
+        $peserta->delete();
+
+        return redirect('/admin/peserta');
     }
 }

@@ -42,6 +42,12 @@ class PengumumanController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'lomba' => 'required',
+            'judul' => 'required',
+            'isi' => 'required',
+            ]);
+
         Pengumuman::create([
             'lomba' => $request->lomba,
             'judul' => $request->judul,
@@ -70,7 +76,10 @@ class PengumumanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $pengumuman = Pengumuman::find($id);
+        return view('admin.pengumuman.edit', [
+            'pengumuman' => $pengumuman,
+            ]);
     }
 
     /**
@@ -82,7 +91,14 @@ class PengumumanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $pengumuman = Pengumuman::find($id);
+        $pengumuman->lomba = $request->lomba;
+        $pengumuman->judul = $request->judul;
+        $pengumuman->isi = $request->isi;
+
+        $pengumuman->save();
+
+        return redirect('/admin/pengumuman');
     }
 
     /**
