@@ -22,9 +22,9 @@
         <!-- <li><a href="{{ url('/setting') }}" class="waves-effect white-text"><i class="zmdi zmdi-settings zmdi-hc-2x white-text"></i>Setting</a></li> -->
         <li><a href="{{ url('/logout') }}" class="waves-effect white-text"><i class="zmdi zmdi-sign-in zmdi-hc-2x white-text"></i>Logout</a></li>
         @if (Auth::user()->role == "admin")
-        <li><a href="{{ url('/admin/tim') }}" class="waves-effect white-text"><i class="zmdi zmdi-sign-in zmdi-hc-2x white-text"></i>AdminTim</a></li>
-        <li><a href="{{ url('/admin/peserta') }}" class="waves-effect white-text"><i class="zmdi zmdi-sign-in zmdi-hc-2x white-text"></i>AdminPeserta</a></li>
-        <li><a href="{{ url('/admin/pengumuman') }}" class="waves-effect white-text"><i class="zmdi zmdi-sign-in zmdi-hc-2x white-text"></i>AdminPengumuman</a></li>
+        <li><a href="{{ url('/admin/tim') }}" class="waves-effect white-text"><i class="material-icons prefix white-text">dns</i>AdminTim</a></li>
+        <li><a href="{{ url('/admin/peserta') }}" class="waves-effect white-text"><i class="material-icons prefix white-text">dns</i>AdminPeserta</a></li>
+        <li><a href="{{ url('/admin/pengumuman') }}" class="waves-effect white-text"><i class="material-icons prefix white-text">dns</i>AdminPengumuman</a></li>
         @endif
     </ul>
 </header>

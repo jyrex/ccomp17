@@ -16,6 +16,8 @@ use Auth;
 
 class AnggotaController extends Controller
 {
+    protected $regex_nim = 'regex:/1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}$/';
+
     /**
      * Display a listing of the resource.
      *
@@ -41,18 +43,17 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        $fakultas = Fakultas::all();
-        return view('tim.anggota.ketua', [
-            'fakultas' => $fakultas,
-            ]);
-    }
+        $ada_ketua = User::where('email', '=', Auth::user()->email)->get()->isEmpty();
+        if ($ada_ketua) {
+            $fakultas = Fakultas::all();
+            return view('tim.anggota.ketua', [
+                'fakultas' => $fakultas,
+                ]);
+        } else {
+            return redirect('/tambah');
+        }
 
-    public function tambah_anggota() 
-    {
-        $fakultas = Fakultas::all();
-        return view('tim.anggota.tambah', [
-            'fakultas' => $fakultas,
-            ]);
+        
     }
 
     /**
@@ -65,27 +66,26 @@ class AnggotaController extends Controller
     {
         // Global checker
         $checker = Peserta::pluck('NIM');
-        $regexp = '1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}';
-
         
         // ketua
         if ($request->nim_ketua != "") {
             // Validate data
             $this->validate($request, [
                 'ketua' => 'required',
-                'nim_ketua' => 'required|regexp:'.$regexp,
+                'nim_ketua' => ['required', $this->regex_nim],
                 'prodi_ketua' => 'required',
                 'ktm_ketua' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
             ]);
 
             $ktm_ketua = $request->file('ktm_ketua');
-            $ktm_ketua->move('uploads/ktm/', $request->nim_ketua);
+            $ktm_ketua->move('uploads/ktm/', str_replace('/', '_', $request->nim_ketua).'.'.$ktm_ketua->getClientOriginalExtension());
+            
             if (!$checker->contains($request->nim_ketua)) {
                 Peserta::create([
                     'NIM' => $request->nim_ketua,
                     'nama_lengkap' => $request->ketua,
                     'id_prodi' => $request->prodi_ketua,
-                    'ktm' => 'uploads/ktm/'.$request->ketua.'.'.$ktm_ketua->getClientOriginalExtension(),
+                    'ktm' => 'uploads/ktm/'.str_replace('/', '_', $request->nim_ketua).'.'.$ktm_ketua->getClientOriginalExtension(),
                     ]);
             }
             Partisipasi::create([
@@ -99,56 +99,32 @@ class AnggotaController extends Controller
         }
         
         // anggota 1
-        if ($request->nim_agg1 != "") {
+        if ($request->nim_agg != "") {
             // Validate data
             $this->validate($request, [
-                'agg1' => 'required',
-                'nim_agg1' => 'required|regexp:'.$regexp,
-                'prodi_agg1' => 'required',
-                'ktm_agg1' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
+                'agg' => 'required',
+                'nim_agg' => ['required', $this->regex_nim],
+                'prodi_agg' => 'required',
+                'ktm_agg' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
             ]);
 
-            $ktm_agg1 = $request->file('ktm_agg1');
-            $ktm_agg1->move('uploads/ktm/', $request->nim_agg1);
-            if (!$checker->contains($request->nim_agg1)) {
+            $ktm_agg = $request->file('ktm_agg');
+            $ktm_agg->move('uploads/ktm/', str_replace('/', '_', $request->nim_agg).'.'.$ktm_agg->getClientOriginalExtension());
+            
+            if (!$checker->contains($request->nim_agg)) {
                 Peserta::create([
-                    'NIM' => $request->nim_agg1,
-                    'nama_lengkap' => $request->agg1,
-                    'id_prodi' => $request->prodi_agg1,
-                    'ktm' => 'uploads/ktm/'.$request->agg1.'.'.$ktm_agg1->getClientOriginalExtension(),
+                    'NIM' => $request->nim_agg,
+                    'nama_lengkap' => $request->agg,
+                    'id_prodi' => $request->prodi_agg,
+                    'ktm' => 'uploads/ktm/'.str_replace('/', '_', $request->nim_agg).'.'.$ktm_agg->getClientOriginalExtension(),
                     ]);
             }
             Partisipasi::create([
-                'NIM' => $request->nim_agg1,
+                'NIM' => $request->nim_agg,
                 'id_tim' => Auth::user()->id,
                 ]);
         }
-        
-        // anggota 2
-        if ($request->nim_agg2 != "") {
-            // Validate data
-            $this->validate($request, [
-                'agg2' => 'required',
-                'nim_agg2' => 'required|regexp:'.$regexp,
-                'prodi_agg2' => 'required',
-                'ktm_agg2' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
-            ]);
 
-            $ktm_agg2 = $request->file('ktm_agg2');
-            $ktm_agg2->move('uploads/ktm/', $request->nim_agg2);
-            if (!$checker->contains($request->nim_agg2)) {
-                Peserta::create([
-                    'NIM' => $request->nim_agg2,
-                    'nama_lengkap' => $request->agg2,
-                    'id_prodi' => $request->prodi_agg2,
-                    'ktm' => 'uploads/ktm/'.$request->agg2.'.'.$ktm_agg2->getClientOriginalExtension(),
-                    ]);
-            }
-            Partisipasi::create([
-                'NIM' => $request->nim_agg2,
-                'id_tim' => Auth::user()->id,
-                ]);
-        }
         return redirect('/team');
     }
 
@@ -171,7 +147,12 @@ class AnggotaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $fakultas = Fakultas::all();
+        $peserta = Peserta::find($id);
+        return view('tim.anggota.edit', [
+            'fakultas' => $fakultas,
+            'peserta' => $peserta,
+            ]);
     }
 
     /**
@@ -183,7 +164,20 @@ class AnggotaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $peserta = Peserta::find($id);
+
+        $this->validate($request, [
+                'nama' => 'required',
+                'NIM' => ['required','regex:/1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}/'],
+                'prodi' => 'required',
+            ]);
+
+        $peserta->NIM = $request->NIM;
+        $peserta->nama_lengkap = $request->nama;
+        $peserta->id_prodi = $request->prodi;
+        $peserta->save();
+
+        return redirect('/team');
     }
 
     /**
@@ -194,6 +188,9 @@ class AnggotaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $partisipasi = Partisipasi::find($id);
+        $partisipasi->delete();
+
+        return redirect('/team');
     }
 }

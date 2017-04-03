@@ -11,7 +11,6 @@
 |
 */
 // GUEST
-Route::group(['middleware' => 'guest'], function () {
 	// Web landing page
 	Route::get('/', function() {
 		return view('landing');
@@ -41,7 +40,6 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::get('/faq', function() {
 		return view('faq');
 	});
-});
 
 // Route login dan register
 Route::auth();
@@ -52,7 +50,7 @@ Route::group(['middleware' => 'auth'], function() {
 	// TIM
 	Route::get('/home', 'HomeController@index');
 	Route::resource('/team', 'Tim\AnggotaController');
-	Route::get('/team/tambah', 'Tim\AnggotaController@tambah_anggota');
+	Route::get('/tambah', 'Tim\TambahAnggotaController@tambah_anggota');
 	Route::resource('/submission', 'Tim\SubmissionController');
 	Route::get('/payment', function() {
 		return view('tim.pembayaran.form');

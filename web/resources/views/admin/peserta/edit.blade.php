@@ -5,7 +5,7 @@
     <div id="admin-form-list">
         <div class="container">
             <div class="row">
-                <form method="post" action="{{ url('/team') }}" class="col s12">
+                <form method="post" action="{{ url('/admin/tim') }}" class="col s12">
                 {{ csrf_field() }}
                 	<div class="row">
                         <div class="input-field col s12">
