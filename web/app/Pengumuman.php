@@ -8,6 +8,8 @@ class Pengumuman extends Model
 {
     protected $table = 'pengumuman';
 
+    public $primaryKey = 'id_peng';
+
     protected $fillable = [
     'lomba',
     'judul',

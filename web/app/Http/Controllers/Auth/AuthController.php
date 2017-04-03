@@ -50,11 +50,13 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
+        $regex_hp = 'regex:/^((08)|(\+62))[0-9]{8,10}$/';
+
         return Validator::make($data, [
             'tim' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'hp' => 'required',
+            'hp' => ['required', $regex_hp],
             'lomba' => 'required',  
         ]);
     }

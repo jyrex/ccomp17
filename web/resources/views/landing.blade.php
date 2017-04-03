@@ -243,7 +243,6 @@
                             <i class="zmdi zmdi-calendar"></i>
                             <span class="date-detail">  13 Mei 2017 </span>
                         </li>
-                        <li class="collection-item"><strong>Penutupan C-Compiler dan Pengumuman Pemenang</strong>
                     </ul>
                 </div>
                 <div id="test4" class="col s12">
@@ -425,8 +424,8 @@
     <div class="modal-content">
         <h4>Software Development</h4>
         <p>Lomba pengembangan aplikasi merupakan lomba yang menguji kemampuan mahasiswa dalam mengembangkan ide, kreativitas, dan solusi dalam menyelesaikan berbagai permasalahan di Indonesia.</p>
-    <p>Peserta diharapkan mengembangkan aplikasi yang memiliki dampak positif masyarakat. Dampak tersebut harus ditunjukkan tidak saja dalam bentuk argumentasi untuk ide, tetapi ditunjang dengan data. Artinya, perangkat lunak yang dikembangkan harus sudah dioperasikan sampai level tertentu, sehingga dampaknya dapat diukur.</p>
-    <p>Domain problem yang diselesaikan antara lain, tetapi tidak terbatas pada, pendidikan, kesehatan, sosial budaya, pertanian dan kelautan, kepariwisataan, sumber daya alam</p>
+        <p>Peserta diharapkan mengembangkan aplikasi yang memiliki dampak positif masyarakat. Dampak tersebut harus ditunjukkan tidak saja dalam bentuk argumentasi untuk ide, tetapi ditunjang dengan data. Artinya, perangkat lunak yang dikembangkan harus sudah dioperasikan sampai level tertentu, sehingga dampaknya dapat diukur.</p>
+        <p>Domain problem yang diselesaikan antara lain, tetapi tidak terbatas pada, pendidikan, kesehatan, sosial budaya, pertanian dan kelautan, kepariwisataan, sumber daya alam</p>
     </div>
     <div class="modal-footer">
         <a href="{{ url('/register') }}" class="modal-action modal-close waves-effect waves-green btn-flat ">Daftar</a>
@@ -436,4 +435,26 @@
 <!-- end of Modal 6 -->
 
 <!-- end of Modal -->
+
+<!-- landing popup -->
+<div id="modal-pengumuman" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <h4>Pengumuman</h4>
+        @foreach ($pengumuman as $list)
+        <p>{{ $list->judul }}</p>
+        <p>{{ $list->isi }}</p>
+        @endforeach
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat ">Tutup</a>
+    </div>
+</div>
+@endsection
+
+@section('page-script')
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#modal-pengumuman').modal('open');
+    });
+</script>
 @endsection

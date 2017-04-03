@@ -5,7 +5,7 @@
     <div id="admin-form-list">
         <div class="container">
             <div class="row">
-                <form method="post" action="{{ url('admin/pengumuman') }}" class="col s12">
+                <form method="post" action="{{ url('admin/pengumuman/'.$pengumuman->id_peng) }}" class="col s12">
                 {{ csrf_field() }}
                 	<div class="row">
                         <div class="input-field col s12">
@@ -31,7 +31,7 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea name="isi" id="isi" type="text" class="materialize-textarea"></textarea>
+                            <input name="isi" id="isi" type="text" class="validate">
                             <label for="isi">Isi</label>
                         </div>
                     </div>

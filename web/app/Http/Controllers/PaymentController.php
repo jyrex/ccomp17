@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 
-use App\Pengumuman;
+use Auth;
+use App\Pembayaran;
 
-class PengumumanController extends Controller
+class PaymentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,10 +18,7 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $pengumuman = Pengumuman::all();
-        return view('admin.pengumuman.index',[
-            'pengumuman' => $pengumuman,
-            ]);
+        //
     }
 
     /**
@@ -31,7 +28,7 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        return view('admin.pengumuman.create');
+        return view('tim.pembayaran.form');
     }
 
     /**
@@ -43,18 +40,20 @@ class PengumumanController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'lomba' => 'required',
-            'judul' => 'required',
-            'isi' => 'required',
+                'bukti' => 'required|mimes:jpeg,png,bmp,jpg|max:5000',
+                'keterangan' => 'required',
             ]);
 
-        Pengumuman::create([
-            'lomba' => $request->lomba,
-            'judul' => $request->judul,
-            'isi' => $request->isi,
+        $bukti = $request->file('bukti');
+        $bukti->move('uploads/bukti/', Auth::user()->tim.'.'.$bukti->getClientOriginalExtension());
+
+        Pembayaran::create([
+            'id_tim' => Auth::user()->id,
+            'bukti' => 'uploads/bukti/'.Auth::user()->tim.'.'.$bukti->getClientOriginalExtension(),
+            'keterangan' => $request->keterangan,
             ]);
 
-        return redirect('admin/pengumuman');
+        return redirect('/payment/create');
     }
 
     /**
@@ -76,10 +75,7 @@ class PengumumanController extends Controller
      */
     public function edit($id)
     {
-        $pengumuman = Pengumuman::find($id);
-        return view('admin.pengumuman.edit', [
-            'pengumuman' => $pengumuman,
-            ]);
+        //
     }
 
     /**
@@ -91,14 +87,7 @@ class PengumumanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pengumuman = Pengumuman::find($id);
-        $pengumuman->lomba = $request->lomba;
-        $pengumuman->judul = $request->judul;
-        $pengumuman->isi = $request->isi;
-
-        $pengumuman->save();
-
-        return redirect('/admin/pengumuman');
+        //
     }
 
     /**

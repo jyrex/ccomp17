@@ -17,6 +17,7 @@ class Pembayaran extends Migration
             $table->integer('id_tim')->unsigned();
             $table->foreign('id_tim')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->string('bukti');
+            $table->text('keterangan');
             $table->timestamps();
         });
     }

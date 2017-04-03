@@ -5,18 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-
 use App\Pengumuman;
-use Auth;
 
-class HomeController extends Controller
+class LandingController extends Controller
 {
-    public function index() {
-    	$pengumuman = Pengumuman::where('lomba', '=', Auth::user()->lomba)
-    		->orWhere('lomba', '=', 'Umum')
+    public function pengumuman() 
+    {
+    	$pengumuman = Pengumuman::where('lomba', '=', 'Umum')
     		->orderBy('created_at', 'desc')
+    		->take(1)
     		->get();
-    	return view('tim.home',[
+    	return view('landing',[
     		'pengumuman' => $pengumuman,
     		]);
     }

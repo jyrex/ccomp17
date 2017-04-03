@@ -32,8 +32,14 @@
 	                            <td>{{ $list->created_at }}</td>
 	                            <td>{{ $list->updated_at }}</td>
 	                            <td>
-	                                <a href="" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="zmdi zmdi-edit zmdi-hc-2x blue-text text-lighten-3"></i></a>
-	                                <a href="" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Hapus"><i class="zmdi zmdi-delete zmdi-hc-2x red-text text-lighten-1"></i></a>
+	                                <a href="{{ url('admin/pengumuman/'.$list->id_peng.'/edit') }}" class="tooltipped" data-position="top" data-delay="50" data-tooltip="Edit"><i class="zmdi zmdi-edit blue-text text-lighten-3"></i></a>
+                                    <form action="{{ url('admin/pengumuman/'.$list->id_peng) }}" method="POST">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="submit" id="delete-task-{{ $list->id_peng }}" class=" btn tooltipped" data-position="top" data-delay="50" data-tooltip="Hapus">
+                                            <i class="zmdi zmdi-delete zmdi-hc-2x red-text text-lighten-1"></i>
+                                    </button>
+                                </form>
 	                            </td>
 	                        </tr>
 	                    @endforeach

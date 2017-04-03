@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Pengumuman;
+use App\Pembayaran;
 
-class PengumumanController extends Controller
+class PembayaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class PengumumanController extends Controller
      */
     public function index()
     {
-        $pengumuman = Pengumuman::all();
-        return view('admin.pengumuman.index',[
-            'pengumuman' => $pengumuman,
+        $pembayaran = Pembayaran::all();
+        return view('admin.pembayaran', [
+            'pembayaran' => $pembayaran,
             ]);
     }
 
@@ -31,7 +31,7 @@ class PengumumanController extends Controller
      */
     public function create()
     {
-        return view('admin.pengumuman.create');
+        //
     }
 
     /**
@@ -42,19 +42,7 @@ class PengumumanController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'lomba' => 'required',
-            'judul' => 'required',
-            'isi' => 'required',
-            ]);
-
-        Pengumuman::create([
-            'lomba' => $request->lomba,
-            'judul' => $request->judul,
-            'isi' => $request->isi,
-            ]);
-
-        return redirect('admin/pengumuman');
+        //
     }
 
     /**
@@ -76,10 +64,7 @@ class PengumumanController extends Controller
      */
     public function edit($id)
     {
-        $pengumuman = Pengumuman::find($id);
-        return view('admin.pengumuman.edit', [
-            'pengumuman' => $pengumuman,
-            ]);
+        //
     }
 
     /**
@@ -91,14 +76,7 @@ class PengumumanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $pengumuman = Pengumuman::find($id);
-        $pengumuman->lomba = $request->lomba;
-        $pengumuman->judul = $request->judul;
-        $pengumuman->isi = $request->isi;
-
-        $pengumuman->save();
-
-        return redirect('/admin/pengumuman');
+        //
     }
 
     /**

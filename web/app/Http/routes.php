@@ -11,10 +11,10 @@
 |
 */
 // GUEST
+Route::group(['middleware' => 'home'], function() {
+
 	// Web landing page
-	Route::get('/', function() {
-		return view('landing');
-	});
+	Route::get('/', 'LandingController@pengumuman');
 
 	// Route untuk detail lomba
 	Route::get('/cp', function() {
@@ -40,6 +40,7 @@
 	Route::get('/faq', function() {
 		return view('faq');
 	});
+});
 
 // Route login dan register
 Route::auth();
@@ -52,9 +53,7 @@ Route::group(['middleware' => 'auth'], function() {
 	Route::resource('/team', 'Tim\AnggotaController');
 	Route::get('/tambah', 'Tim\TambahAnggotaController@tambah_anggota');
 	Route::resource('/submission', 'Tim\SubmissionController');
-	Route::get('/payment', function() {
-		return view('tim.pembayaran.form');
-	});
+	Route::resource('/payment', 'PaymentController');
 	Route::get('/setting', function() {
 		return view('tim.pengaturan');
 	});
@@ -65,13 +64,31 @@ Route::group(['middleware' => 'auth'], function() {
 		Route::resource('/tim', 'Admin\TimController');
 		Route::resource('/peserta', 'Admin\PesertaController');
 		Route::resource('/pengumuman', 'Admin\PengumumanController');
+		Route::resource('/pembayaran', 'Admin\PembayaranController');
 	});
 });
 
 // AJAX
 Route::get('/fakultas/{fak_id}', 'Ajax\GetProdiController@get_prodi');
 
+// DATABASE
 // migrating database
-Route::get('/install/migration', function() {
+Route::get('/migration/install', function() {
 	Artisan::call('migrate');
+	return redirect('/');
 });
+// refresh
+Route::get('/migration/refresh', function() {
+	Artisan::call('migrate:refresh --seed');
+	return redirect('/');
+});
+
+// WEB
+// down
+Route::get('/server/down', function() {
+	Artisan::call('down');
+	return redirect('/');
+});
+
+// up
+// delete storage/framework/down secara manual

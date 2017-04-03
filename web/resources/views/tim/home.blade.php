@@ -12,6 +12,7 @@
             @foreach ($pengumuman as $list)
                 <li class="collection-item">
                     <h5><strong>{{ $list->judul }}</strong></h5>
+                    <h6>{{ $list->lomba }}</h6>
                     {{ $list->isi }}
                 </li>
             @endforeach

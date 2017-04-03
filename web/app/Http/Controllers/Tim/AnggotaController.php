@@ -16,7 +16,7 @@ use Auth;
 
 class AnggotaController extends Controller
 {
-    protected $regex_nim = 'regex:/1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}$/';
+    protected $regex_nim = 'regex:/^1[0-6]\/[0-9]{6}\/[A-Z]{2,3}\/[0-9]{5}$/';
 
     /**
      * Display a listing of the resource.
@@ -43,17 +43,10 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        $ada_ketua = User::where('email', '=', Auth::user()->email)->get()->isEmpty();
-        if ($ada_ketua) {
-            $fakultas = Fakultas::all();
-            return view('tim.anggota.ketua', [
-                'fakultas' => $fakultas,
-                ]);
-        } else {
-            return redirect('/tambah');
-        }
-
-        
+        $fakultas = Fakultas::all();
+        return view('tim.anggota.ketua', [
+            'fakultas' => $fakultas,
+            ]);
     }
 
     /**
