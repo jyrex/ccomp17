@@ -73,13 +73,25 @@ Route::get('/fakultas/{fak_id}', 'Ajax\GetProdiController@get_prodi');
 
 // DATABASE
 // migrating database
-Route::get('/migration/install', function() {
-	Artisan::call('migrate');
+Route::get('/migration/install/{key}', function($key) {
+	if ($key == 'HEbEitgN4Yl3xdRgNVlpUw2Xbui_o9GMnef1Jx4R4sY') {
+		Artisan::call('migrate', [
+			'--seed' => true,
+		]);
+		return "migrate success";
+	}
+	
 	return redirect('/');
 });
 // refresh
-Route::get('/migration/refresh', function() {
-	Artisan::call('migrate:refresh --seed');
+Route::get('/migration/refresh/{key}', function($key) {
+	if ($key == 'HEbEitgN4Yl3xdRgNVlpUw2Xbui_o9GMnef1Jx4R4sY') {
+		Artisan::call('migrate:refresh', [
+			'--seed' => true,
+		]);
+		return "migrate:refresh success";
+	}
+	
 	return redirect('/');
 });
 
