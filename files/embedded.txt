@@ -1,0 +1,42 @@
+Piranti cerdas (smart device) adalah sebuah hasil karya teknologi yang bekerja secara interaktif dan otomatis 
+serta mampu memberikan suatu solusi bagi permasalahan sehari-hari. Sementara itu Embedded system adalah sebua piranti keras (hardware) 
+yang bekerja berdasarkan perintah dari piranti lunak (software) dan didesain memiliki tujuan dan fungsi yang spesifik. 
+ Dengan menggabungkan konsep piranti cerdas dan embedded system, maka diharapkan dapat terciptanya sebuah sistem kompleks memiliki kualitas yang baik.
+Dilengkapi dengan antarmuka yang baik dan penggunaan sensor sebagai input dari keadaan lingkungan, 
+piranti cerdas dapat bekerja secara efisien dan memberikan manfaat yang besar bagi lingkungan dan masyarakat.
+
+Tema :
+
+"Embed Your Intelligence into Stuff"
+
+Kriteria Penilaian :
+
+1. Kesesuaian alat dengan tema lomba.
+2. Kreativitas alat.
+3. Kegunaan alat.
+4. Tampilan mock up alat. 
+
+
+Babak Penyisihan 1
+
+Pada tahap ini, peserta akan melalui proses seleksi dokumen dalam bentuk proposal. Proposal disusun mengikuti struktur dokumen sebagai berikut:
+
+1. Cover Proposal
+2. Judul / Nama Piranti Cerdas
+3. Nama Tim dan Anggota
+4. Logo C-Compiler di pojok kiri atas dan logo universitas di pojok kanan atas
+5. Latar Belakang
+6. Tujuan dan Manfaat
+7. Metode dan Desain
+8. Analisis alat
+9. Implementasi alat
+10. Desain Mock-Up alat 
+
+Babak Penyisihan 2 :
+
+Sepuluh finalis kemudian akan didanai dan peserta diminta untuk mengembangkan alat untuk selanjutnya dipresentasikan di final.
+
+
+Babak Final :
+
+Peserta akan diminta untuk mempresentasikan alat yang sudah dibuat dihadapan juri dan kemudian akan dipilih tiga orang pemenang.
